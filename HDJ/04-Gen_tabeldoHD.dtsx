@@ -1,0 +1,305 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/6/2017 9:41:54 AM"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="DANIEL-LENOVO"
+  DTS:CreatorName="DANIEL-LENOVO\Max"
+  DTS:DTSID="{9E7DA3C3-86DA-44A4-981B-F938E4152A87}"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="13.0.2165.0"
+  DTS:LocaleID="1045"
+  DTS:ObjectName="04-Gen_tabeldoHD"
+  DTS:PackageType="5"
+  DTS:VersionBuild="37"
+  DTS:VersionGUID="{46B6E3D2-F655-4A51-B6E1-3D41F35A0868}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Tfakt"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{8E6956D1-E03C-4AE6-9511-E345B59EFFC1}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tfakt"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D286A97B-5B5B-4EFD-897E-3AA59C23B850}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="IF EXISTS (SELECT 1 FROM information_schema.tables where table_name like 'tfakt')&#xA;DROP TABLE tfakt &#xA;&#xA;CREATE TABLE tfakt (&#xA;id_czas VARCHAR(10) NOT NULL FOREIGN KEY (id_czas) &#xA;REFERENCES czas(id_czas),&#xA;&#xA;id_miejsce VARCHAR(64) NOT NULL FOREIGN KEY (id_miejsce) &#xA;REFERENCES miejsce(id_miejsce),&#xA;&#xA;id_jednostka_miary INT NOT NULL FOREIGN KEY (id_jednostka_miary) &#xA;REFERENCES jednostka_miary(id_jednostka_miary),&#xA;&#xA;id_dzialania INT NOT NULL FOREIGN KEY (id_dzialania) &#xA;REFERENCES dzialanie(id_dzialania),&#xA;&#xA;wartosc NUMERIC(10,2)&#xA;);&#xA;&#xA;&#xA;&#xA;INSERT INTO tfakt (id_czas, id_dzialania, wartosc, id_miejsce, id_jednostka_miary) &#xA;SELECT&#xA;&#x9;   data as id_czas&#xA;      ,1 as id_dzialania&#xA;      ,CAST(CAST([Wartość] as float) as numeric(10,0)) as wartosc&#xA;      ,[Miasto] as id_miejsce&#xA;&#x9;  ,2 as id_jednostka_miary&#xA;  FROM [HD_400_I].[dbo].[DaneXL]&#xA;  WHERE zmienna='Produkcja przemysłowa w szt.'&#xA;&#xA;INSERT INTO tfakt (id_czas, id_dzialania, wartosc, id_miejsce, id_jednostka_miary) &#xA;SELECT&#xA;&#x9;   data as id_czas&#xA;      ,2 as id_dzialania&#xA;      ,CAST(CAST([Wartość] as float) as numeric(10,2))*1000 as wartosc&#xA;      ,[Miasto] as id_miejsce&#xA;&#x9;  ,3 as id_jednostka_miary&#xA;  FROM [HD_400_I].[dbo].[DaneXL]&#xA;  WHERE zmienna='Wydobycie w tonach'&#xA;&#xA;INSERT INTO tfakt (id_czas, id_dzialania, wartosc, id_miejsce, id_jednostka_miary) &#xA;SELECT data as id_czas&#xA;      ,3 as id_dzialania&#xA;      ,CAST(CAST([Wartość] as float) as numeric(10,2)) as wartosc&#xA;      ,[Miasto] as id_miejsce&#xA;&#x9;  ,1 as id_jednostka_miary&#xA;  FROM [HD_400_I].[dbo].[DaneXL]&#xA;  WHERE zmienna='Zakupy w zł'&#xA; &#xA;&#xA;INSERT INTO tfakt (id_czas, id_dzialania, wartosc, id_miejsce, id_jednostka_miary) &#xA;SELECT data as id_czas&#xA;      ,4 as id_dzialania&#xA;      ,CAST(CAST([Wartość] as float) as numeric(10,2)) as wartosc&#xA;      ,[Miasto] as id_miejsce&#xA;&#x9;  ,1 as id_jednostka_miary&#xA;  FROM [HD_400_I].[dbo].[DaneXL]&#xA;  WHERE zmienna='Koszty w zł'&#xA;&#xA;&#xA;INSERT INTO tfakt (id_czas, id_dzialania, wartosc, id_miejsce, id_jednostka_miary) &#xA;SELECT data as id_czas&#xA;      ,5 as id_dzialania&#xA;      ,CAST(CAST([Wartość] as float) as numeric(10,2)) as wartosc&#xA;      ,[Miasto] as id_miejsce&#xA;&#x9;  ,1 as id_jednostka_miary&#xA;  FROM [HD_400_I].[dbo].[DaneXL]&#xA;  WHERE zmienna='Sprzedaż w zł'&#xA;&#xA;&#xA;INSERT INTO tfakt (id_czas, id_dzialania, wartosc, id_miejsce, id_jednostka_miary) &#xA;SELECT data as id_czas&#xA;      ,6 as id_dzialania&#xA;      ,CAST(CAST([Wartość] as float) as numeric(10,0)) as wartosc&#xA;      ,[Miasto] as id_miejsce&#xA;&#x9;  ,2 as id_jednostka_miary&#xA;  FROM [HD_400_I].[dbo].[DaneXL]&#xA;  WHERE zmienna='Produkcja w szt.'&#xA;&#xA;INSERT INTO tfakt (id_czas, id_dzialania, wartosc, id_miejsce, id_jednostka_miary) &#xA;SELECT data as id_czas&#xA;      ,7 as id_dzialania&#xA;      ,CAST(CAST([Wartość] as float) as numeric(10,2)) as wartosc&#xA;      ,[Miasto] as id_miejsce&#xA;&#x9;  ,3 as id_jednostka_miary&#xA;  FROM [HD_400_I].[dbo].[DaneXL]&#xA;  WHERE zmienna='Zamówienia półproduktów w kg'&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Tm czas"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{A1224BBD-6287-481C-AD41-548DF8CC4768}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tm czas"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D286A97B-5B5B-4EFD-897E-3AA59C23B850}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="IF EXISTS (SELECT 1 FROM information_schema.tables where table_name like 'czas')&#xA;DROP TABLE czas &#xA;&#xA;CREATE TABLE czas (&#xA;id_czas VARCHAR(10) NOT NULL PRIMARY KEY,&#xA;rok VARCHAR(4),&#xA;miesiac VARCHAR(2),&#xA;nazwa_miesiaca VARCHAR(20),&#xA;dzien VARCHAR(2),&#xA;kwartal VARCHAR(1),&#xA;nazwa_kwartalu VARCHAR(3),&#xA;numer_dnia_tygodnia INT,&#xA;dzien_tygodnia VARCHAR(12),&#xA;weekend BIT&#xA;);&#xA;&#xA;INSERT INTO [HD_400_I].[dbo].[czas] &#xA;(&#xA;       rok&#xA;       ,miesiac&#xA;       ,dzien &#xA;       ,id_czas&#xA;)&#xA;  SELECT DISTINCT &#xA;    [HD_400_I].[dbo].[DaneXL].[rok]&#xA;  , [HD_400_I].[dbo].[DaneXL].[miesiac]&#xA;  , [HD_400_I].[dbo].[DaneXL].[dzien]&#xA;  ,[HD_400_I].[dbo].[DaneXL].[rok]+'-'+[HD_400_I].[dbo].[DaneXL].[miesiac]+'-'+[HD_400_I].[dbo].[DaneXL].[dzien]&#xA;&#xA;FROM [HD_400_I].[dbo].[DaneXL] WHERE [HD_400_I].[dbo].[DaneXL].[rok]+'-'+[HD_400_I].[dbo].[DaneXL].[miesiac]+'-'+[HD_400_I].[dbo].[DaneXL].[dzien] IS NOT NULL&#xA;&#xA;UPDATE [HD_400_I].[dbo].[czas]&#xA;SET nazwa_kwartalu = 'IV', kwartal = 4&#xA;WHERE miesiac &lt;= 12&#xA;&#xA;&#xA;UPDATE [HD_400_I].[dbo].[czas]&#xA;SET nazwa_kwartalu = 'III', kwartal = 3&#xA;WHERE miesiac &lt;= 9&#xA;&#xA;&#xA;UPDATE [HD_400_I].[dbo].[czas]&#xA;SET nazwa_kwartalu = 'II', kwartal = 2&#xA;WHERE miesiac &lt;= 6&#xA;&#xA;&#xA;UPDATE [HD_400_I].[dbo].[czas]&#xA;SET nazwa_kwartalu = 'I', kwartal = 1&#xA;WHERE miesiac &lt;= 3&#xA;&#xA;&#xA;&#xA;&#xA;UPDATE [HD_400_I].[dbo].[czas]&#xA;SET nazwa_miesiaca = 'styczen'&#xA;WHERE miesiac = 1&#xA;&#xA;UPDATE [HD_400_I].[dbo].[czas]&#xA;SET nazwa_miesiaca = 'luty'&#xA;WHERE miesiac = 2&#xA;&#xA;UPDATE [HD_400_I].[dbo].[czas]&#xA;SET nazwa_miesiaca = 'marzec'&#xA;WHERE miesiac = 3&#xA;&#xA;UPDATE [HD_400_I].[dbo].[czas]&#xA;SET nazwa_miesiaca = 'kwiecien'&#xA;WHERE miesiac = 4&#xA;&#xA;UPDATE [HD_400_I].[dbo].[czas]&#xA;SET nazwa_miesiaca = 'maj'&#xA;WHERE miesiac = 5&#xA;&#xA;UPDATE [HD_400_I].[dbo].[czas]&#xA;SET nazwa_miesiaca = 'czerwiec'&#xA;WHERE miesiac = 6&#xA;&#xA;UPDATE [HD_400_I].[dbo].[czas]&#xA;SET nazwa_miesiaca = 'lipiec'&#xA;WHERE miesiac = 7&#xA;&#xA;UPDATE [HD_400_I].[dbo].[czas]&#xA;SET nazwa_miesiaca = 'sierpień'&#xA;WHERE miesiac = 8&#xA;&#xA;UPDATE [HD_400_I].[dbo].[czas]&#xA;SET nazwa_miesiaca = 'wrzesień'&#xA;WHERE miesiac = 9&#xA;&#xA;UPDATE [HD_400_I].[dbo].[czas]&#xA;SET nazwa_miesiaca = 'październik'&#xA;WHERE miesiac = 10&#xA;&#xA;UPDATE [HD_400_I].[dbo].[czas]&#xA;SET nazwa_miesiaca = 'listopad'&#xA;WHERE miesiac = 11&#xA;&#xA;UPDATE [HD_400_I].[dbo].[czas]&#xA;SET nazwa_miesiaca = 'grudzień'&#xA;WHERE miesiac = 12&#xA;&#xA;UPDATE [HD_400_I].[dbo].[czas]&#xA;SET weekend = 1&#xA;WHERE datename(weekday,[HD_400_I].[dbo].[czas].[rok] + '-' + [HD_400_I].[dbo].[czas].[miesiac] + '-' + [HD_400_I].[dbo].[czas].[dzien]) in ('Saturday','Sunday')&#xA;&#xA;UPDATE [HD_400_I].[dbo].[czas]&#xA;SET weekend = 0&#xA;WHERE datename(weekday,[HD_400_I].[dbo].[czas].[rok] + '-' + [HD_400_I].[dbo].[czas].[miesiac] + '-' + [HD_400_I].[dbo].[czas].[dzien]) in ('Monday','Tuesday','Wednesday','Thursday','Friday')&#xA;&#xA;UPDATE [HD_400_I].[dbo].[czas]&#xA;SET numer_dnia_tygodnia = 1, dzien_tygodnia = 'niedziela'&#xA;WHERE datename(weekday,[HD_400_I].[dbo].[czas].[rok] + '-' + [HD_400_I].[dbo].[czas].[miesiac] + '-' + [HD_400_I].[dbo].[czas].[dzien]) in ('Sunday')&#xA;&#xA;UPDATE [HD_400_I].[dbo].[czas]&#xA;SET numer_dnia_tygodnia = 2, dzien_tygodnia = 'poniedziałek'&#xA;WHERE datename(weekday,[HD_400_I].[dbo].[czas].[rok] + '-' + [HD_400_I].[dbo].[czas].[miesiac] + '-' + [HD_400_I].[dbo].[czas].[dzien]) in ('Monday')&#xA;&#xA;UPDATE [HD_400_I].[dbo].[czas]&#xA;SET numer_dnia_tygodnia = 3, dzien_tygodnia = 'wtorek'&#xA;WHERE datename(weekday,[HD_400_I].[dbo].[czas].[rok] + '-' + [HD_400_I].[dbo].[czas].[miesiac] + '-' + [HD_400_I].[dbo].[czas].[dzien]) in ('Tuesday')&#xA;&#xA;UPDATE [HD_400_I].[dbo].[czas]&#xA;SET numer_dnia_tygodnia = 4, dzien_tygodnia = 'środa'&#xA;WHERE datename(weekday,[HD_400_I].[dbo].[czas].[rok] + '-' + [HD_400_I].[dbo].[czas].[miesiac] + '-' + [HD_400_I].[dbo].[czas].[dzien]) in ('Wednesday')&#xA;&#xA;UPDATE [HD_400_I].[dbo].[czas]&#xA;SET numer_dnia_tygodnia = 5, dzien_tygodnia = 'czwartek'&#xA;WHERE datename(weekday,[HD_400_I].[dbo].[czas].[rok] + '-' + [HD_400_I].[dbo].[czas].[miesiac] + '-' + [HD_400_I].[dbo].[czas].[dzien]) in ('Thursday')&#xA;&#xA;UPDATE [HD_400_I].[dbo].[czas]&#xA;SET numer_dnia_tygodnia = 6, dzien_tygodnia = 'piątek'&#xA;WHERE datename(weekday,[HD_400_I].[dbo].[czas].[rok] + '-' + [HD_400_I].[dbo].[czas].[miesiac] + '-' + [HD_400_I].[dbo].[czas].[dzien]) in ('Friday')&#xA;&#xA;UPDATE [HD_400_I].[dbo].[czas]&#xA;SET numer_dnia_tygodnia = 7, dzien_tygodnia = 'sobota'&#xA;WHERE datename(weekday,[HD_400_I].[dbo].[czas].[rok] + '-' + [HD_400_I].[dbo].[czas].[miesiac] + '-' + [HD_400_I].[dbo].[czas].[dzien]) in ('Saturday')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Tm Działanie"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{0A26C780-3CD3-4E6B-8DB7-85CA12531BD8}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tm Działanie"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D286A97B-5B5B-4EFD-897E-3AA59C23B850}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="IF EXISTS (SELECT 1 FROM information_schema.tables where table_name like 'dzialanie ')&#xA;DROP TABLE dzialanie &#xA;&#xA;CREATE TABLE dzialanie (&#xA;id_dzialania INT NOT NULL IDENTITY(1,1) PRIMARY KEY,&#xA;nazwa_dzialania VARCHAR(30)&#xA;);&#xA;&#xA;&#xA;INSERT INTO [HD_400_I].[dbo].[dzialanie] (nazwa_dzialania)&#xA;VALUES &#xA;&#x9;('Produkcja przemysłowa')&#xA;&#x9;,('Wydobycie')&#xA;&#x9;,('Zakupy')&#xA;&#x9;,('Koszty')&#xA;&#x9;,('Sprzedaż')&#xA;&#x9;,('Produkcja')&#xA;&#x9;,('Zamówienia półproduktów');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Tm Jednostka miary"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{EC118F99-FAF6-4AE0-8C72-F8E199754814}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tm Jednostka miary"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D286A97B-5B5B-4EFD-897E-3AA59C23B850}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="IF EXISTS (SELECT 1 FROM information_schema.tables where table_name like 'jednostka_miary')&#xA;DROP TABLE jednostka_miary&#xA;&#xA;CREATE TABLE jednostka_miary (&#xA;id_jednostka_miary INT NOT NULL IDENTITY(1,1) PRIMARY KEY,&#xA;symbol VARCHAR(10),&#xA;nazwa VARCHAR(20)&#xA;);&#xA;&#xA;INSERT INTO [HD_400_I].[dbo].[jednostka_miary]  (symbol,nazwa)&#xA;VALUES ('zł','złotówki'), ('szt','sztuki'), ('kg','kilogramy');&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Tm Miejsce"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{0BBCEBC1-0B7B-43B9-BC22-75F2241FFE50}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tm Miejsce"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D286A97B-5B5B-4EFD-897E-3AA59C23B850}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="IF EXISTS (SELECT 1 FROM information_schema.tables where table_name like 'miejsce')&#xA;DROP TABLE miejsce&#xA;&#xA;CREATE TABLE miejsce(&#xA;id_miejsce  VARCHAR(64) NOT NULL PRIMARY KEY,&#xA;miejscowosc VARCHAR(24) ,&#xA;powiat  VARCHAR(24),&#xA;kod_wojewodztwo VARCHAR(2),&#xA;nazwa_wojewodztwa VARCHAR(19)&#xA;);&#xA;&#xA;&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Biała Podlaska (LB)', 'Biała Podlaska', 'LB', 'lubelskie', 'Biała Podlaska');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Bialystok1 (PL)', 'Białystok', 'PL', 'podlaskie', 'Białystok');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Bielsko-Biała (ŚL)', 'Bielsko-Biała', 'ŚL', 'śląskie', 'Bielsko-Biała');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Bydgoszcz (KP)', 'Bydgoszcz', 'KP', 'kujawsko-pomorskie', 'Bydgoszcz');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Bialystok2 (PL)', 'Białystok', 'PL', 'podlaskie', 'Białystok');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Bytom (ŚL)', 'Bytom', 'ŚL', 'śląskie', 'Bytom');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Chełm (LB)', 'Chełm', 'LB', 'lubelskie', 'Chełm');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Chorzów (ŚL)', 'Chorzów', 'ŚL', 'śląskie', 'Chorzów');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Częstochowa (ŚL)', 'Częstochowa', 'ŚL', 'śląskie', 'Częstochowa');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Dąbrowa Górnicza (ŚL)', 'Dąbrowa Górnicza', 'ŚL', 'śląskie', 'Dąbrowa Górnicza');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Elbląg (WM)', 'Elbląg', 'WM', 'warmińsko-mazurskie', 'Elbląg');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Gdańsk (PM)', 'Gdańsk', 'PM', 'pomorskie', 'Gdańsk');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Gdynia (PM)', 'Gdynia', 'PM', 'pomorskie', 'Gdynia');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Gliwice (ŚL)', 'Gliwice', 'ŚL', 'śląskie', 'Gliwice');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Gorzów Wielkopolski (LS)', 'Gorzów Wielkopolski', 'LS', 'lubuskie', 'Gorzów Wielkopolski');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Grudziądz (KP)', 'Grudziądz', 'KP', 'kujawsko-pomorskie', 'Grudziądz');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Jastrzębie-Zdrój (ŚL)', 'Jastrzębie-Zdrój', 'ŚL', 'śląskie', 'Jastrzębie-Zdrój');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Jaworzno (ŚL)', 'Jaworzno', 'ŚL', 'śląskie', 'Jaworzno');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Jelenia Góra (DŚ)', 'Jelenia Góra', 'DŚ', 'dolnośląskie', 'Jelenia Góra');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Kalisz (WP)', 'Kalisz', 'WP', 'wielkopolskie', 'Kalisz');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Katowice (ŚL)', 'Katowice', 'ŚL', 'śląskie', 'Katowice');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Kielce (ŚK)', 'Kielce', 'ŚK', 'świętokrzyskie', 'Kielce');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Konin (WP)', 'Konin', 'WP', 'wielkopolskie', 'Konin');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Koszalin (ZP)', 'Koszalin', 'ZP', 'zachodniopomorskie', 'Koszalin');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Kraków (MP)', 'Kraków', 'MP', 'małopolskie', 'Kraków');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Krosno (PK)', 'Krosno', 'PK', 'podkarpackie', 'Krosno');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Legnica (DŚ)', 'Legnica', 'DŚ', 'dolnośląskie', 'Legnica');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Leszno (WP)', 'Leszno', 'WP', 'mazowieckie', 'Leszno');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Lublin (LB)', 'Lublin', 'LB', 'lubelskie', 'Lublin');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Łomża (PL)', 'Łomża', 'PL', 'podlaskie', 'Łomża');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Łódź (ŁD)', 'Łódź', 'ŁD', 'łódzkie', 'Łódź');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Mysłowice (ŚL)', 'Mysłowice', 'ŚL', 'śląskie', 'Mysłowice');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Nowy Sącz (MP)', 'Nowy Sącz', 'MP', 'małopolskie', 'Nowy Sącz');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Olsztyn (WM)', 'Olsztyn', 'WM', 'śląskie', 'Olsztyn');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Opole (OP)', 'Opole', 'OP', 'opolskie', 'Opole');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Ostrołęka (MZ)', 'Ostrołęka', 'MZ', 'mazowieckie', 'Ostrołęka');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Piekary Śląskie (ŚL)', 'Piekary Śląskie', 'ŚL', 'śląskie', 'Piekary Śląskie');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Piotrków Trybunalski (ŁD)', 'Piotrków Trybunalski', 'ŁD', 'łódzkie', 'Piotrków Trybunalski');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Płock (MZ)', 'Płock', 'MZ', 'mazowieckie', 'Płock');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Poznań (WP)', 'Poznań', 'WP', 'wielkopolskie', 'Poznań');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Przemyśl (PK)', 'Przemyśl', 'PK', 'podkarpackie', 'Przemyśl');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Radom (MZ)', 'Radom', 'MZ', 'mazowieckie', 'Radom');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Ruda Śląska (ŚL)', 'Ruda Śląska', 'ŚL', 'śląskie', 'Ruda Śląska');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Rybnik (ŚL)', 'Rybnik', 'ŚL', 'śląskie', 'Rybnik');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Rzeszów (PK)', 'Rzeszów', 'PK', 'podkarpackie', 'Rzeszów');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Siedlce (MZ)', 'Siedlce', 'MZ', 'mazowieckie', 'Siedlce');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Siemianowice Śląskie (ŚL)', 'Siemianowice Śląskie', 'ŚL', 'śląskie', 'Siemianowice Śląskie');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Skierniewice (ŁD)', 'Skierniewice', 'ŁD', 'łódzkie', 'Skierniewice');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Słupsk (PM)', 'Słupsk', 'PM', 'pomorskie', 'Słupsk');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Sopot (PM)', 'Sopot', 'PM', 'pomorskie', 'Sopot');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Sosnowiec (ŚL)', 'Sosnowiec', 'ŚL', 'śląskie', 'Sosnowiec');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Suwałki (PL)', 'Suwałki', 'PL', 'podlaskie', 'Suwałki');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Szczecin (ZP)', 'Szczecin', 'ZP', 'zachodniopomorskie', 'Szczecin');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Świętochłowice (ŚL)', 'Świętochłowice', 'ŚL', 'śląskie', 'Świętochłowice');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Świnoujście (ZP)', 'Świnoujście', 'ZP', 'zachodniopomorskie', 'Świnoujście');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Tarnobrzeg (PK)', 'Tarnobrzeg', 'PK', 'podkarpackie', 'Tarnobrzeg');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Tarnów (MP)', 'Tarnów', 'MP', 'małopolskie', 'Tarnów');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Toruń (KP)', 'Toruń', 'KP', 'kujawsko-pomorskie', 'Toruń');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Tychy (ŚL)', 'Tychy', 'ŚL', 'śląskie', 'Tychy');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Wałbrzych (DŚ)', 'Wałbrzych', 'DŚ', 'dolnośląskie', 'Wałbrzych');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Warszawa (MZ)', 'Warszawa', 'MZ', 'mazowieckie', 'Warszawa');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Włocławek (KP)', 'Włocławek', 'KP', 'kujawsko-pomorskie', 'Włocławek');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Wrocław (DŚ)', 'Wrocław', 'DŚ', 'dolnośląskie', 'Wrocław');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Zabrze (ŚL)', 'Zabrze', 'ŚL', 'śląskie', 'Zabrze');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Zamość (LB)', 'Zamość', 'LB', 'lubelskie', 'Zamość');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Zielona Góra (LS)', 'Zielona Góra', 'LS', 'lubuskie', 'Zielona Góra');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('Żory (ŚL)', 'Żory', 'ŚL', 'śląskie', 'Żory');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('kaliski miasto Kalisz (WP)', 'Kalisz', 'WP', 'wielkopolskie', 'kaliski');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('kamiennogórski miasto Kamienna Góra (DŚ)', 'Kamienna Góra', 'DŚ', 'dolnośląskie', 'kamiennogórski');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('kamieński miasto Kamień Pomorski (ZP)', 'Kamień Pomorski', 'ZP', 'zachodniopomorskie', 'kamieński');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('kartuski miasto Kartuzy (PM)', 'Kartuzy', 'PM', 'pomorskie', 'kartuski');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('kazimierski miasto Kazimierza Wielka (ŚK)', 'Kazimierza Wielka', 'ŚK', 'świętokrzyskie', 'kazimierski');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('kędzierzyńsko-kozielski miasto Kędzierzyn-Koźle (OP)', 'Kędzierzyn-Koźle', 'OP', 'opolskie', 'kędzierzyńsko-kozielski');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('kępiński miasto Kępno (WP)', 'Kępno', 'WP', 'wielkopolskie', 'kępiński');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('kętrzyński miasto Kętrzyn (WM)', 'Kętrzyn', 'WM', 'warmińsko-mazurskie', 'kętrzyński');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('kielecki miasto Kielce (ŚK)', 'Kielce', 'ŚK', 'świętokrzyskie', 'kielecki');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('kluczborski miasto Kluczbork (OP)', 'Kluczbork', 'OP', 'opolskie', 'kluczborski');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('kłobucki miasto Kłobuck (ŚL)', 'Kłobuck', 'ŚL', 'śląskie', 'kłobucki');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('kłodzki miasto Kłodzko (DŚ)', 'Kłodzko', 'DŚ', 'dolnośląskie', 'kłodzki');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('kolbuszowski miasto Kolbuszowa (PK)', 'Kolbuszowa', 'PK', 'podkarpackie', 'kolbuszowski');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('kolneński miasto Kolno (PL)', 'Kolno', 'PL', 'podlaskie', 'kolneński');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('kolski miasto Koło (WP)', 'Koło', 'WP', 'wielkopolskie', 'kolski');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('kołobrzeski miasto Kołobrzeg (ZP)', 'Kołobrzeg', 'ZP', 'zachodniopomorskie', 'kołobrzeski');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('konecki miasto Końskie (ŚK)', 'Końskie', 'ŚK', 'świętokrzyskie', 'konecki');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('koniński miasto Konin (WP)', 'Konin', 'WP', 'wielkopolskie', 'koniński');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('koszaliński miasto Koszalin (ZP)', 'Koszalin', 'ZP', 'zachodniopomorskie', 'koszaliński');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('kościański miasto Kościan (WP)', 'Kościan', 'WP', 'wielkopolskie', 'kościański');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('kościerski miasto Kościerzyna (PM)', 'Kościerzyna', 'PM', 'pomorskie', 'kościerski');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('kozienicki miasto Kozienice (MZ)', 'Kozienice', 'MZ', 'mazowieckie', 'kozienicki');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('krakowski miasto Kraków (MP)', 'Kraków', 'MP', 'małopolskie', 'krakowski');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('krapkowicki miasto Krapkowice (OP)', 'Krapkowice', 'OP', 'opolskie', 'krapkowicki');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('krasnostawski miasto Krasnystaw (LB)', 'Krasnystaw', 'LB', 'lubelskie', 'krasnostawski');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('kraśnicki miasto Kraśnik (LB)', 'Kraśnik', 'LB', 'lubelskie', 'kraśnicki');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('krośnieński miasto Krosno (PK)', 'Krosno', 'PK', 'podkarpackie', 'krośnieński');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('krośnieński miasto Krosno Odrzańskie (LS)', 'Krosno Odrzańskie', 'LS', 'lubuskie', 'krośnieński');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('krotoszyński miasto Krotoszyn (WP)', 'Krotoszyn', 'WP', 'wielkopolskie', 'krotoszyński');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('kutnowski miasto Kutno (ŁD)', 'Kutno', 'ŁD', 'łódzkie', 'kutnowski');&#xA;INSERT INTO miejsce(id_miejsce,miejscowosc,kod_wojewodztwo,nazwa_wojewodztwa,powiat) VALUES ('kwidzyński miasto Kwidzyn (PM)', 'Kwidzyn', 'PM', 'pomorskie', 'kwidzyński');" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{2A53A5E2-7FFA-4AA3-A696-495C8F38125A}"
+      DTS:From="Package\Tm czas"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Tm Miejsce" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{93FD44CB-1C3A-4D1E-8EDC-37CE94DEC525}"
+      DTS:From="Package\Tm Miejsce"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Tm Działanie" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{6C56EB26-F1C0-4199-9F1C-02A277B12098}"
+      DTS:From="Package\Tm Działanie"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Tm Jednostka miary" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{20F12711-B0FE-45F0-957B-4FE3C8B7D152}"
+      DTS:From="Package\Tm Jednostka miary"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Tfakt" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="104,42.6666666666667"
+          Id="Package\Tfakt"
+          TopLeft="69.638893915961,311.477776070502" />
+        <NodeLayout
+          Size="118.666666666667,42.6666666666667"
+          Id="Package\Tm czas"
+          TopLeft="92.9583326037973,18.0892859093845" />
+        <NodeLayout
+          Size="140,42"
+          Id="Package\Tm Działanie"
+          TopLeft="67.6388936179379,153.77777558234" />
+        <NodeLayout
+          Size="174,42"
+          Id="Package\Tm Jednostka miary"
+          TopLeft="36.5277826723953,238.766664721767" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Tm Miejsce"
+          TopLeft="62.0833355374634,91.4999989539385" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="152.291665937131,60.7559525760512">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-25.2083303996672,30.7440463778873"
+              Start="0,0"
+              End="-25.2083303996672,23.2440463778873">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.3720231889437" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.3720231889437"
+                    Point2="0,15.3720231889437"
+                    Point3="-4,15.3720231889437" />
+                  <mssgle:LineSegment
+                    End="-21.2083303996672,15.3720231889437" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-21.2083303996672,15.3720231889437"
+                    Point2="-25.2083303996672,15.3720231889437"
+                    Point3="-25.2083303996672,19.3720231889437" />
+                  <mssgle:LineSegment
+                    End="-25.2083303996672,23.2440463778873" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="62.0833355374634,112.499998953939">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="5.55555808047453,62.2777766284016"
+              Start="0,0"
+              End="-1.94444191952547,62.2777766284016">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.5,0"
+                    Point2="-22.5,0"
+                    Point3="-22.5,4" />
+                  <mssgle:LineSegment
+                    End="-22.5,58.2777766284016" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.5,58.2777766284016"
+                    Point2="-22.5,62.2777766284016"
+                    Point3="-18.5,62.2777766284016" />
+                  <mssgle:LineSegment
+                    End="-1.94444191952547,62.2777766284016" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="137.638893617938,195.77777558234">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-14.1111109455426,42.9888891394271"
+              Start="0,0"
+              End="-14.1111109455426,35.4888891394271">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.4944445697135" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.4944445697135"
+                    Point2="0,21.4944445697135"
+                    Point3="-4,21.4944445697135" />
+                  <mssgle:LineSegment
+                    End="-10.1111109455426,21.4944445697135" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-10.1111109455426,21.4944445697135"
+                    Point2="-14.1111109455426,21.4944445697135"
+                    Point3="-14.1111109455426,25.4944445697135" />
+                  <mssgle:LineSegment
+                    End="-14.1111109455426,35.4888891394271" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="122.583338294178,280.766664721767">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.7111113487352"
+              Start="0,0"
+              End="0,23.2111113487352">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.2111113487352" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

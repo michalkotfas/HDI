@@ -1,0 +1,1813 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/11/2017 3:26:13 PM"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="DANIEL-LENOVO"
+  DTS:CreatorName="DANIEL-LENOVO\Max"
+  DTS:Description="DTS Wizard-generated package"
+  DTS:DTSID="{578CA640-3402-4B1B-A40B-5B84F5A26171}"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="13.0.2165.0"
+  DTS:LocaleID="1045"
+  DTS:MaxErrorCount="0"
+  DTS:ObjectName="02-ImpCSV"
+  DTS:VersionBuild="18"
+  DTS:VersionGUID="{8C78ADE3-F31A-4C32-90DE-9C119B783BA0}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task 1"
+      DTS:CreationName="SSIS.Pipeline.3"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{8B7E190F-FE66-47CC-B39E-DDB455564FA1}"
+      DTS:ExecutableType="SSIS.Pipeline.3"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task 1"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          defaultBufferSize="3145728"
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task 1\Destination - Danecsv"
+              componentClassID="DTSAdapter.OLEDBDestination.3"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Destination - Danecsv"
+              usesDispositions="true"
+              validateExternalMetadata="False"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Danecsv]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Destination - Danecsv.Connections[OleDbConnection]"
+                  connectionManagerID="{D286A97B-5B5B-4EFD-897E-3AA59C23B850}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.HD_400_I]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].Columns[rok]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="rok"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[rok]"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[rok]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].Columns[miesiac]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="miesiac"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[miesiac]"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[miesiac]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].Columns[dzien]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="dzien"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[dzien]"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[dzien]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].Columns[zmienna]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="zmienna"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[zmienna]"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[zmienna]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].Columns[kaliski miasto Kalisz (WP)]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="kaliski miasto Kalisz (WP)"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[kaliski miasto Kalisz (WP)]"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kaliski miasto Kalisz (WP)]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].Columns[kamiennogórski miasto Kamienna Góra (DŚ)]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="kamiennogórski miasto Kamienna Góra (DŚ)"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[kamiennogórski miasto Kamienna Góra (DŚ)]"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kamiennogórski miasto Kamienna Góra (DŚ)]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].Columns[kamieński miasto Kamień Pomorski (ZP)]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="kamieński miasto Kamień Pomorski (ZP)"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[kamieński miasto Kamień Pomorski (ZP)]"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kamieński miasto Kamień Pomorski (ZP)]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].Columns[kartuski miasto Kartuzy (PM)]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="kartuski miasto Kartuzy (PM)"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[kartuski miasto Kartuzy (PM)]"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kartuski miasto Kartuzy (PM)]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].Columns[kazimierski miasto Kazimierza Wielka (ŚK)]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="kazimierski miasto Kazimierza Wielka (ŚK)"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[kazimierski miasto Kazimierza Wielka (ŚK)]"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kazimierski miasto Kazimierza Wielka (ŚK)]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].Columns[kędzierzyńsko-kozielski miasto Kędzierzyn-Koźle (OP)]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="kędzierzyńsko-kozielski miasto Kędzierzyn-Koźle (OP)"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[kędzierzyńsko-kozielski miasto Kędzierzyn-Koźle (OP)]"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kędzierzyńsko-kozielski miasto Kędzierzyn-Koźle (OP)]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].Columns[kępiński miasto Kępno (WP)]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="kępiński miasto Kępno (WP)"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[kępiński miasto Kępno (WP)]"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kępiński miasto Kępno (WP)]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].Columns[kętrzyński miasto Kętrzyn (WM)]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="kętrzyński miasto Kętrzyn (WM)"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[kętrzyński miasto Kętrzyn (WM)]"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kętrzyński miasto Kętrzyn (WM)]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].Columns[kielecki miasto Kielce (ŚK)]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="kielecki miasto Kielce (ŚK)"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[kielecki miasto Kielce (ŚK)]"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kielecki miasto Kielce (ŚK)]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].Columns[kluczborski miasto Kluczbork (OP)]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="kluczborski miasto Kluczbork (OP)"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[kluczborski miasto Kluczbork (OP)]"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kluczborski miasto Kluczbork (OP)]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].Columns[kłobucki miasto Kłobuck (ŚL)]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="kłobucki miasto Kłobuck (ŚL)"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[kłobucki miasto Kłobuck (ŚL)]"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kłobucki miasto Kłobuck (ŚL)]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].Columns[kłodzki miasto Kłodzko (DŚ)]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="kłodzki miasto Kłodzko (DŚ)"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[kłodzki miasto Kłodzko (DŚ)]"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kłodzki miasto Kłodzko (DŚ)]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].Columns[kolbuszowski miasto Kolbuszowa (PK)]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="kolbuszowski miasto Kolbuszowa (PK)"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[kolbuszowski miasto Kolbuszowa (PK)]"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kolbuszowski miasto Kolbuszowa (PK)]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].Columns[kolneński miasto Kolno (PL)]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="kolneński miasto Kolno (PL)"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[kolneński miasto Kolno (PL)]"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kolneński miasto Kolno (PL)]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].Columns[kolski miasto Koło (WP)]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="kolski miasto Koło (WP)"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[kolski miasto Koło (WP)]"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kolski miasto Koło (WP)]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].Columns[kołobrzeski miasto Kołobrzeg (ZP)]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="kołobrzeski miasto Kołobrzeg (ZP)"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[kołobrzeski miasto Kołobrzeg (ZP)]"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kołobrzeski miasto Kołobrzeg (ZP)]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].Columns[konecki miasto Końskie (ŚK)]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="konecki miasto Końskie (ŚK)"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[konecki miasto Końskie (ŚK)]"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[konecki miasto Końskie (ŚK)]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].Columns[koniński miasto Konin (WP)]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="koniński miasto Konin (WP)"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[koniński miasto Konin (WP)]"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[koniński miasto Konin (WP)]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].Columns[koszaliński miasto Koszalin (ZP)]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="koszaliński miasto Koszalin (ZP)"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[koszaliński miasto Koszalin (ZP)]"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[koszaliński miasto Koszalin (ZP)]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].Columns[kościański miasto Kościan (WP)]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="kościański miasto Kościan (WP)"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[kościański miasto Kościan (WP)]"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kościański miasto Kościan (WP)]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].Columns[kościerski miasto Kościerzyna (PM)]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="kościerski miasto Kościerzyna (PM)"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[kościerski miasto Kościerzyna (PM)]"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kościerski miasto Kościerzyna (PM)]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].Columns[kozienicki miasto Kozienice (MZ)]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="kozienicki miasto Kozienice (MZ)"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[kozienicki miasto Kozienice (MZ)]"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kozienicki miasto Kozienice (MZ)]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].Columns[krakowski miasto Kraków (MP)]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="krakowski miasto Kraków (MP)"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[krakowski miasto Kraków (MP)]"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[krakowski miasto Kraków (MP)]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].Columns[krapkowicki miasto Krapkowice (OP)]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="krapkowicki miasto Krapkowice (OP)"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[krapkowicki miasto Krapkowice (OP)]"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[krapkowicki miasto Krapkowice (OP)]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].Columns[krasnostawski miasto Krasnystaw (LB)]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="krasnostawski miasto Krasnystaw (LB)"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[krasnostawski miasto Krasnystaw (LB)]"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[krasnostawski miasto Krasnystaw (LB)]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].Columns[kraśnicki miasto Kraśnik (LB)]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="kraśnicki miasto Kraśnik (LB)"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[kraśnicki miasto Kraśnik (LB)]"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kraśnicki miasto Kraśnik (LB)]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].Columns[krośnieński miasto Krosno (PK)]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="krośnieński miasto Krosno (PK)"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[krośnieński miasto Krosno (PK)]"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[krośnieński miasto Krosno (PK)]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].Columns[krośnieński miasto Krosno Odrzańskie (LS)]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="krośnieński miasto Krosno Odrzańskie (LS)"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[krośnieński miasto Krosno Odrzańskie (LS)]"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[krośnieński miasto Krosno Odrzańskie (LS)]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].Columns[krotoszyński miasto Krotoszyn (WP)]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="krotoszyński miasto Krotoszyn (WP)"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[krotoszyński miasto Krotoszyn (WP)]"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[krotoszyński miasto Krotoszyn (WP)]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].Columns[kutnowski miasto Kutno (ŁD)]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="kutnowski miasto Kutno (ŁD)"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[kutnowski miasto Kutno (ŁD)]"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kutnowski miasto Kutno (ŁD)]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].Columns[kwidzyński miasto Kwidzyn (PM)]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="kwidzyński miasto Kwidzyn (PM)"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[kwidzyński miasto Kwidzyn (PM)]"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kwidzyński miasto Kwidzyn (PM)]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[rok]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="rok" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[miesiac]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="miesiac" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[dzien]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="dzien" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[zmienna]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="zmienna" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[kaliski miasto Kalisz (WP)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="kaliski miasto Kalisz (WP)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[kamiennogórski miasto Kamienna Góra (DŚ)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="kamiennogórski miasto Kamienna Góra (DŚ)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[kamieński miasto Kamień Pomorski (ZP)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="kamieński miasto Kamień Pomorski (ZP)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[kartuski miasto Kartuzy (PM)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="kartuski miasto Kartuzy (PM)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[kazimierski miasto Kazimierza Wielka (ŚK)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="kazimierski miasto Kazimierza Wielka (ŚK)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[kędzierzyńsko-kozielski miasto Kędzierzyn-Koźle (OP)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="kędzierzyńsko-kozielski miasto Kędzierzyn-Koźle (OP)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[kępiński miasto Kępno (WP)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="kępiński miasto Kępno (WP)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[kętrzyński miasto Kętrzyn (WM)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="kętrzyński miasto Kętrzyn (WM)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[kielecki miasto Kielce (ŚK)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="kielecki miasto Kielce (ŚK)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[kluczborski miasto Kluczbork (OP)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="kluczborski miasto Kluczbork (OP)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[kłobucki miasto Kłobuck (ŚL)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="kłobucki miasto Kłobuck (ŚL)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[kłodzki miasto Kłodzko (DŚ)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="kłodzki miasto Kłodzko (DŚ)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[kolbuszowski miasto Kolbuszowa (PK)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="kolbuszowski miasto Kolbuszowa (PK)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[kolneński miasto Kolno (PL)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="kolneński miasto Kolno (PL)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[kolski miasto Koło (WP)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="kolski miasto Koło (WP)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[kołobrzeski miasto Kołobrzeg (ZP)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="kołobrzeski miasto Kołobrzeg (ZP)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[konecki miasto Końskie (ŚK)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="konecki miasto Końskie (ŚK)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[koniński miasto Konin (WP)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="koniński miasto Konin (WP)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[koszaliński miasto Koszalin (ZP)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="koszaliński miasto Koszalin (ZP)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[kościański miasto Kościan (WP)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="kościański miasto Kościan (WP)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[kościerski miasto Kościerzyna (PM)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="kościerski miasto Kościerzyna (PM)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[kozienicki miasto Kozienice (MZ)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="kozienicki miasto Kozienice (MZ)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[krakowski miasto Kraków (MP)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="krakowski miasto Kraków (MP)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[krapkowicki miasto Krapkowice (OP)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="krapkowicki miasto Krapkowice (OP)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[krasnostawski miasto Krasnystaw (LB)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="krasnostawski miasto Krasnystaw (LB)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[kraśnicki miasto Kraśnik (LB)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="kraśnicki miasto Kraśnik (LB)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[krośnieński miasto Krosno (PK)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="krośnieński miasto Krosno (PK)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[krośnieński miasto Krosno Odrzańskie (LS)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="krośnieński miasto Krosno Odrzańskie (LS)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[krotoszyński miasto Krotoszyn (WP)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="krotoszyński miasto Krotoszyn (WP)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[kutnowski miasto Kutno (ŁD)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="kutnowski miasto Kutno (ŁD)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input].ExternalColumns[kwidzyński miasto Kwidzyn (PM)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="kwidzyński miasto Kwidzyn (PM)" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Destination - Danecsv.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - Danecsv.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - Danecsv.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - Danecsv.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\Source - ZestawI_csv"
+              componentClassID="DTSAdapter.FlatFileSource.3"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1045"
+              name="Source - ZestawI_csv"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Source - ZestawI_csv.Connections[FlatFileConnection]"
+                  connectionManagerID="{5B626B79-CEFC-4B12-920F-99F0D83CB55B}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[CSV Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[rok]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[rok]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[rok]"
+                      name="rok"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[miesiac]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[miesiac]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[miesiac]"
+                      name="miesiac"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[dzien]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[dzien]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[dzien]"
+                      name="dzien"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[zmienna]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[zmienna]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[zmienna]"
+                      name="zmienna"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kaliski miasto Kalisz (WP)]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[kaliski miasto Kalisz (WP)]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kaliski miasto Kalisz (WP)]"
+                      name="kaliski miasto Kalisz (WP)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kamiennogórski miasto Kamienna Góra (DŚ)]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[kamiennogórski miasto Kamienna Góra (DŚ)]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kamiennogórski miasto Kamienna Góra (DŚ)]"
+                      name="kamiennogórski miasto Kamienna Góra (DŚ)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kamieński miasto Kamień Pomorski (ZP)]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[kamieński miasto Kamień Pomorski (ZP)]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kamieński miasto Kamień Pomorski (ZP)]"
+                      name="kamieński miasto Kamień Pomorski (ZP)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kartuski miasto Kartuzy (PM)]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[kartuski miasto Kartuzy (PM)]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kartuski miasto Kartuzy (PM)]"
+                      name="kartuski miasto Kartuzy (PM)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kazimierski miasto Kazimierza Wielka (ŚK)]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[kazimierski miasto Kazimierza Wielka (ŚK)]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kazimierski miasto Kazimierza Wielka (ŚK)]"
+                      name="kazimierski miasto Kazimierza Wielka (ŚK)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kędzierzyńsko-kozielski miasto Kędzierzyn-Koźle (OP)]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[kędzierzyńsko-kozielski miasto Kędzierzyn-Koźle (OP)]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kędzierzyńsko-kozielski miasto Kędzierzyn-Koźle (OP)]"
+                      name="kędzierzyńsko-kozielski miasto Kędzierzyn-Koźle (OP)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kępiński miasto Kępno (WP)]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[kępiński miasto Kępno (WP)]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kępiński miasto Kępno (WP)]"
+                      name="kępiński miasto Kępno (WP)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kętrzyński miasto Kętrzyn (WM)]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[kętrzyński miasto Kętrzyn (WM)]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kętrzyński miasto Kętrzyn (WM)]"
+                      name="kętrzyński miasto Kętrzyn (WM)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kielecki miasto Kielce (ŚK)]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[kielecki miasto Kielce (ŚK)]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kielecki miasto Kielce (ŚK)]"
+                      name="kielecki miasto Kielce (ŚK)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kluczborski miasto Kluczbork (OP)]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[kluczborski miasto Kluczbork (OP)]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kluczborski miasto Kluczbork (OP)]"
+                      name="kluczborski miasto Kluczbork (OP)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kłobucki miasto Kłobuck (ŚL)]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[kłobucki miasto Kłobuck (ŚL)]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kłobucki miasto Kłobuck (ŚL)]"
+                      name="kłobucki miasto Kłobuck (ŚL)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kłodzki miasto Kłodzko (DŚ)]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[kłodzki miasto Kłodzko (DŚ)]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kłodzki miasto Kłodzko (DŚ)]"
+                      name="kłodzki miasto Kłodzko (DŚ)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kolbuszowski miasto Kolbuszowa (PK)]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[kolbuszowski miasto Kolbuszowa (PK)]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kolbuszowski miasto Kolbuszowa (PK)]"
+                      name="kolbuszowski miasto Kolbuszowa (PK)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kolneński miasto Kolno (PL)]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[kolneński miasto Kolno (PL)]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kolneński miasto Kolno (PL)]"
+                      name="kolneński miasto Kolno (PL)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kolski miasto Koło (WP)]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[kolski miasto Koło (WP)]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kolski miasto Koło (WP)]"
+                      name="kolski miasto Koło (WP)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kołobrzeski miasto Kołobrzeg (ZP)]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[kołobrzeski miasto Kołobrzeg (ZP)]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kołobrzeski miasto Kołobrzeg (ZP)]"
+                      name="kołobrzeski miasto Kołobrzeg (ZP)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[konecki miasto Końskie (ŚK)]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[konecki miasto Końskie (ŚK)]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[konecki miasto Końskie (ŚK)]"
+                      name="konecki miasto Końskie (ŚK)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[koniński miasto Konin (WP)]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[koniński miasto Konin (WP)]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[koniński miasto Konin (WP)]"
+                      name="koniński miasto Konin (WP)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[koszaliński miasto Koszalin (ZP)]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[koszaliński miasto Koszalin (ZP)]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[koszaliński miasto Koszalin (ZP)]"
+                      name="koszaliński miasto Koszalin (ZP)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kościański miasto Kościan (WP)]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[kościański miasto Kościan (WP)]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kościański miasto Kościan (WP)]"
+                      name="kościański miasto Kościan (WP)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kościerski miasto Kościerzyna (PM)]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[kościerski miasto Kościerzyna (PM)]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kościerski miasto Kościerzyna (PM)]"
+                      name="kościerski miasto Kościerzyna (PM)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kozienicki miasto Kozienice (MZ)]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[kozienicki miasto Kozienice (MZ)]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kozienicki miasto Kozienice (MZ)]"
+                      name="kozienicki miasto Kozienice (MZ)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[krakowski miasto Kraków (MP)]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[krakowski miasto Kraków (MP)]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[krakowski miasto Kraków (MP)]"
+                      name="krakowski miasto Kraków (MP)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[krapkowicki miasto Krapkowice (OP)]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[krapkowicki miasto Krapkowice (OP)]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[krapkowicki miasto Krapkowice (OP)]"
+                      name="krapkowicki miasto Krapkowice (OP)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[krasnostawski miasto Krasnystaw (LB)]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[krasnostawski miasto Krasnystaw (LB)]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[krasnostawski miasto Krasnystaw (LB)]"
+                      name="krasnostawski miasto Krasnystaw (LB)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kraśnicki miasto Kraśnik (LB)]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[kraśnicki miasto Kraśnik (LB)]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kraśnicki miasto Kraśnik (LB)]"
+                      name="kraśnicki miasto Kraśnik (LB)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[krośnieński miasto Krosno (PK)]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[krośnieński miasto Krosno (PK)]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[krośnieński miasto Krosno (PK)]"
+                      name="krośnieński miasto Krosno (PK)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[krośnieński miasto Krosno Odrzańskie (LS)]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[krośnieński miasto Krosno Odrzańskie (LS)]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[krośnieński miasto Krosno Odrzańskie (LS)]"
+                      name="krośnieński miasto Krosno Odrzańskie (LS)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[krotoszyński miasto Krotoszyn (WP)]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[krotoszyński miasto Krotoszyn (WP)]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[krotoszyński miasto Krotoszyn (WP)]"
+                      name="krotoszyński miasto Krotoszyn (WP)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kutnowski miasto Kutno (ŁD)]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[kutnowski miasto Kutno (ŁD)]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kutnowski miasto Kutno (ŁD)]"
+                      name="kutnowski miasto Kutno (ŁD)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kwidzyński miasto Kwidzyn (PM)]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[kwidzyński miasto Kwidzyn (PM)]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].Columns[kwidzyński miasto Kwidzyn (PM)]"
+                      name="kwidzyński miasto Kwidzyn (PM)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[rok]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="rok" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[miesiac]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="miesiac" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[dzien]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="dzien" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[zmienna]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="zmienna" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[kaliski miasto Kalisz (WP)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="kaliski miasto Kalisz (WP)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[kamiennogórski miasto Kamienna Góra (DŚ)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="kamiennogórski miasto Kamienna Góra (DŚ)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[kamieński miasto Kamień Pomorski (ZP)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="kamieński miasto Kamień Pomorski (ZP)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[kartuski miasto Kartuzy (PM)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="kartuski miasto Kartuzy (PM)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[kazimierski miasto Kazimierza Wielka (ŚK)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="kazimierski miasto Kazimierza Wielka (ŚK)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[kędzierzyńsko-kozielski miasto Kędzierzyn-Koźle (OP)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="kędzierzyńsko-kozielski miasto Kędzierzyn-Koźle (OP)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[kępiński miasto Kępno (WP)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="kępiński miasto Kępno (WP)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[kętrzyński miasto Kętrzyn (WM)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="kętrzyński miasto Kętrzyn (WM)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[kielecki miasto Kielce (ŚK)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="kielecki miasto Kielce (ŚK)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[kluczborski miasto Kluczbork (OP)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="kluczborski miasto Kluczbork (OP)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[kłobucki miasto Kłobuck (ŚL)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="kłobucki miasto Kłobuck (ŚL)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[kłodzki miasto Kłodzko (DŚ)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="kłodzki miasto Kłodzko (DŚ)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[kolbuszowski miasto Kolbuszowa (PK)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="kolbuszowski miasto Kolbuszowa (PK)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[kolneński miasto Kolno (PL)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="kolneński miasto Kolno (PL)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[kolski miasto Koło (WP)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="kolski miasto Koło (WP)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[kołobrzeski miasto Kołobrzeg (ZP)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="kołobrzeski miasto Kołobrzeg (ZP)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[konecki miasto Końskie (ŚK)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="konecki miasto Końskie (ŚK)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[koniński miasto Konin (WP)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="koniński miasto Konin (WP)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[koszaliński miasto Koszalin (ZP)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="koszaliński miasto Koszalin (ZP)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[kościański miasto Kościan (WP)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="kościański miasto Kościan (WP)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[kościerski miasto Kościerzyna (PM)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="kościerski miasto Kościerzyna (PM)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[kozienicki miasto Kozienice (MZ)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="kozienicki miasto Kozienice (MZ)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[krakowski miasto Kraków (MP)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="krakowski miasto Kraków (MP)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[krapkowicki miasto Krapkowice (OP)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="krapkowicki miasto Krapkowice (OP)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[krasnostawski miasto Krasnystaw (LB)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="krasnostawski miasto Krasnystaw (LB)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[kraśnicki miasto Kraśnik (LB)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="kraśnicki miasto Kraśnik (LB)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[krośnieński miasto Krosno (PK)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="krośnieński miasto Krosno (PK)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[krośnieński miasto Krosno Odrzańskie (LS)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="krośnieński miasto Krosno Odrzańskie (LS)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[krotoszyński miasto Krotoszyn (WP)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="krotoszyński miasto Krotoszyn (WP)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[kutnowski miasto Kutno (ŁD)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="kutnowski miasto Kutno (ŁD)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output].ExternalColumns[kwidzyński miasto Kwidzyn (PM)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="kwidzyński miasto Kwidzyn (PM)" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1250"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task 1.Paths[Flat File Source Output]"
+              endId="Package\Data Flow Task 1\Destination - Danecsv.Inputs[Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Data Flow Task 1\Source - ZestawI_csv.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Preparation SQL Task 1"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:DTSID="{4CF63368-E539-49EE-9BEE-663A33A0E03B}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Preparation SQL Task 1"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D286A97B-5B5B-4EFD-897E-3AA59C23B850}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="IF EXISTS (SELECT 1 FROM information_schema.tables where table_name like 'Danecsv')&#xA;DROP TABLE Danecsv&#xA;&#xA;CREATE TABLE [dbo].[Danecsv] (&#xA;[rok] varchar(50),&#xA;[miesiac] varchar(50),&#xA;[dzien] varchar(50),&#xA;[zmienna] varchar(50),&#xA;[kaliski miasto Kalisz (WP)] varchar(50),&#xA;[kamiennogórski miasto Kamienna Góra (DŚ)] varchar(50),&#xA;[kamieński miasto Kamień Pomorski (ZP)] varchar(50),&#xA;[kartuski miasto Kartuzy (PM)] varchar(50),&#xA;[kazimierski miasto Kazimierza Wielka (ŚK)] varchar(50),&#xA;[kędzierzyńsko-kozielski miasto Kędzierzyn-Koźle (OP)] varchar(50),&#xA;[kępiński miasto Kępno (WP)] varchar(50),&#xA;[kętrzyński miasto Kętrzyn (WM)] varchar(50),&#xA;[kielecki miasto Kielce (ŚK)] varchar(50),&#xA;[kluczborski miasto Kluczbork (OP)] varchar(50),&#xA;[kłobucki miasto Kłobuck (ŚL)] varchar(50),&#xA;[kłodzki miasto Kłodzko (DŚ)] varchar(50),&#xA;[kolbuszowski miasto Kolbuszowa (PK)] varchar(50),&#xA;[kolneński miasto Kolno (PL)] varchar(50),&#xA;[kolski miasto Koło (WP)] varchar(50),&#xA;[kołobrzeski miasto Kołobrzeg (ZP)] varchar(50),&#xA;[konecki miasto Końskie (ŚK)] varchar(50),&#xA;[koniński miasto Konin (WP)] varchar(50),&#xA;[koszaliński miasto Koszalin (ZP)] varchar(50),&#xA;[kościański miasto Kościan (WP)] varchar(50),&#xA;[kościerski miasto Kościerzyna (PM)] varchar(50),&#xA;[kozienicki miasto Kozienice (MZ)] varchar(50),&#xA;[krakowski miasto Kraków (MP)] varchar(50),&#xA;[krapkowicki miasto Krapkowice (OP)] varchar(50),&#xA;[krasnostawski miasto Krasnystaw (LB)] varchar(50),&#xA;[kraśnicki miasto Kraśnik (LB)] varchar(50),&#xA;[krośnieński miasto Krosno (PK)] varchar(50),&#xA;[krośnieński miasto Krosno Odrzańskie (LS)] varchar(50),&#xA;[krotoszyński miasto Krotoszyn (WP)] varchar(50),&#xA;[kutnowski miasto Kutno (ŁD)] varchar(50),&#xA;[kwidzyński miasto Kwidzyn (PM)] varchar(50)&#xA;)&#xA;GO&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[{D87BBF5E-FC4E-4B74-937A-10514B96429E\}]"
+      DTS:CreationName=""
+      DTS:DTSID="{D87BBF5E-FC4E-4B74-937A-10514B96429E}"
+      DTS:From="Package\Preparation SQL Task 1"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="{D87BBF5E-FC4E-4B74-937A-10514B96429E}"
+      DTS:To="Package\Data Flow Task 1" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="160,42"
+          Id="Package\Data Flow Task 1"
+          TopLeft="20.5,107.5" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Preparation SQL Task 1"
+          TopLeft="5.50000000000001,5.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[{D87BBF5E-FC4E-4B74-937A-10514B96429E\}]"
+          TopLeft="100.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task 1">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Data Flow Task 1\Source - ZestawI_csv"
+          TopLeft="6.50000000000001,7.5" />
+        <NodeLayout
+          Size="182,42"
+          Id="Package\Data Flow Task 1\Destination - Danecsv"
+          TopLeft="5.50000000000001,107.5" />
+        <EdgeLayout
+          Id="Package\Data Flow Task 1.Paths[Flat File Source Output]"
+          TopLeft="96.5,49.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58"
+              Start="0,0"
+              End="0,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task 1\Destination - Danecsv">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

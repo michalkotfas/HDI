@@ -1,0 +1,752 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="77d8534d-af31-45b3-b02d-80411c7e4f5b" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Czas</ID>
+  <Name>Czas</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-867" scrolltop="-4220" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="4260" y="13441" backcolor="16119285" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01ee0000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="czas" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="3889" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000310f000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_czas" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-867</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-4220</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="53856750-df3c-432a-b15a-61768eb76e46">
+    <DataSourceViewID>HD 400 I</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="ca536dd5-4d84-4e40-923c-7d1f7f6717bf">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Translations>
+    <Translation dwd:design-time-name="2c6d2bbf-fa74-44ed-9265-72532b99bacc">
+      <Language>1045</Language>
+      <Caption>Czas</Caption>
+    </Translation>
+    <Translation dwd:design-time-name="a1ce7fc4-c3d5-45a3-b183-1c6f6ac4db7f">
+      <Language>2057</Language>
+      <Caption>Time</Caption>
+    </Translation>
+    <Translation dwd:design-time-name="efdfe02d-97f1-494d-948a-7a4413b049f7">
+      <Language>1025</Language>
+      <Caption>وقت</Caption>
+    </Translation>
+    <Translation dwd:design-time-name="ca915e2d-7fb6-4f56-b901-c9894f0e4020">
+      <Language>1031</Language>
+      <Caption>Zeit</Caption>
+    </Translation>
+    <Translation dwd:design-time-name="1db18265-aeee-4afd-9c1a-1ba16340455b">
+      <Language>1049</Language>
+      <Caption>раз</Caption>
+    </Translation>
+    <Translation dwd:design-time-name="f26b503b-c2a8-43c4-a59c-c495e292b34f">
+      <Language>3082</Language>
+      <Caption>tiempo</Caption>
+    </Translation>
+  </Translations>
+  <Attributes>
+    <Attribute dwd:design-time-name="4137ea6c-38a9-4517-b365-23ec8b3bb81a">
+      <ID>Id Czas</ID>
+      <Name>Id Czas</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="4d53aef6-65b5-4258-820b-cdec95625617">
+          <DataType>WChar</DataType>
+          <DataSize>10</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3748e3d2-70ab-46f9-a008-7119f06abbfe">
+            <TableID>dbo_czas</TableID>
+            <ColumnID>id_czas</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <Translations>
+        <Translation dwd:design-time-name="2985ffcf-e13b-4c34-ac8d-440a4299b704">
+          <Language>1045</Language>
+          <Caption>ID Czas</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="9256f1f3-b4ba-4765-a73a-dbea1042e574">
+          <Language>2057</Language>
+          <Caption>ID Time</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="513ea7b7-f73f-46fd-b22c-b556c2418948">
+          <Language>1025</Language>
+          <Caption>الوقت معرف</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="feade1bc-9b6a-4c56-b87d-47096956f7ac">
+          <Language>1031</Language>
+          <Caption>ID Zeit</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="86fce9ce-a075-4e22-8315-70983805c09d">
+          <Language>1049</Language>
+          <Caption>ID раз</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="d223a9a4-af0a-42a1-b6e9-3e27df58d93f">
+          <Language>3082</Language>
+          <Caption>ID tiempo</Caption>
+        </Translation>
+      </Translations>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="67c002d0-9de2-433f-a3a3-91d97fe09541">
+          <AttributeID>Rok</AttributeID>
+          <Name>Rok</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="103c97a3-f6a9-4d7d-bc8f-9d79f141463e">
+          <AttributeID>Miesiac</AttributeID>
+          <Name>Miesiac</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="143f1af6-502d-47e2-a83f-9b56bbca07d5">
+          <AttributeID>Nazwa Miesiaca</AttributeID>
+          <Name>Nazwa Miesiaca</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="6e86b892-c4fb-4bbd-82ce-1188274bc6c8">
+          <AttributeID>Dzien</AttributeID>
+          <Name>Dzien</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="d59ae4e5-87c0-4fc1-8ca3-7137e3c5870b">
+          <AttributeID>Kwartal</AttributeID>
+          <Name>Kwartal</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="9a7278b2-13f2-490a-b3b3-4d9cc0b1ee9a">
+          <AttributeID>Nazwa Kwartalu</AttributeID>
+          <Name>Nazwa Kwartalu</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="2ffe4666-5821-4c7a-b56b-7822bb87b4ac">
+          <AttributeID>Numer Dnia Tygodnia</AttributeID>
+          <Name>Numer Dnia Tygodnia</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="0c0e31e8-57fe-4062-b05e-825eaf069517">
+          <AttributeID>Dzien Tygodnia</AttributeID>
+          <Name>Dzien Tygodnia</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="0a547907-e428-4a8c-9230-14a5ccf51835">
+          <AttributeID>Weekend</AttributeID>
+          <Name>Weekend</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="013a4346-8249-406b-927e-561305d5e2a9">
+      <ID>Rok</ID>
+      <Name>Rok</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="9b17f503-a245-477a-a3df-4a7d0c5c5c56">
+          <DataType>WChar</DataType>
+          <DataSize>4</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="cde83d81-1969-4283-8563-c4ef2ca382ef">
+            <TableID>dbo_czas</TableID>
+            <ColumnID>rok</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <Translations>
+        <Translation dwd:design-time-name="2faa176c-f362-4350-a561-b6c25b29aad3">
+          <Language>1045</Language>
+          <Caption>Rok</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="52f2e60f-9882-47a1-9059-7a41b28e637f">
+          <Language>2057</Language>
+          <Caption>Year</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="f3d0c089-078a-435f-988d-4f01fc7f5758">
+          <Language>1025</Language>
+          <Caption>عام</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="4557f5ae-ef90-4609-afd8-f2bec6beedda">
+          <Language>1031</Language>
+          <Caption>Jahr</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="b7b24f50-9e68-4d6a-993f-cd94a51cc237">
+          <Language>1049</Language>
+          <Caption>год</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="84933ede-ef5e-4385-aa06-10e720689a53">
+          <Language>3082</Language>
+          <Caption>año</Caption>
+        </Translation>
+      </Translations>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="86378dc0-29b1-4958-85b5-fb27c6360fb7">
+      <ID>Miesiac</ID>
+      <Name>Miesiac</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="5b852439-27a3-4e44-a4dc-fb759388133b">
+          <DataType>WChar</DataType>
+          <DataSize>2</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="efc3f488-ef54-4548-a3f8-e45d7b2a1d8d">
+            <TableID>dbo_czas</TableID>
+            <ColumnID>miesiac</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <Translations>
+        <Translation dwd:design-time-name="9b219b20-f2ff-4eb9-afbd-6f39a8e226ac">
+          <Language>1045</Language>
+          <Caption>Miesiąc</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="5011faf7-7d38-4568-b981-943bc99304b5">
+          <Language>2057</Language>
+          <Caption>Month</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="af78d9e9-74dc-4bec-9acf-270330bb0bb3">
+          <Language>1025</Language>
+          <Caption>شهر</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="b80c2004-5b31-470b-8056-895e6df68ca4">
+          <Language>1031</Language>
+          <Caption>Monat</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="2c5ad007-ee64-45f7-819a-bf2580c6a742">
+          <Language>1049</Language>
+          <Caption>месяц</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="a54f360d-77b9-4ac3-8c51-e339113b3d4d">
+          <Language>3082</Language>
+          <Caption>mes</Caption>
+        </Translation>
+      </Translations>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="a8bde23e-ad1b-4503-877d-2c2543769fb9">
+      <ID>Nazwa Miesiaca</ID>
+      <Name>Nazwa Miesiaca</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="a6634eb4-f361-4e7f-8005-5da1155f4131">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="6c71571f-82c4-4735-a44b-d90865b56b60">
+            <TableID>dbo_czas</TableID>
+            <ColumnID>nazwa_miesiaca</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <Translations>
+        <Translation dwd:design-time-name="e24a642e-d34c-4d52-830f-0a28a46ce7ee">
+          <Language>1045</Language>
+          <Caption>Nazwa Miesiąca</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="ff29253d-3d60-46ce-8197-faad1a6bdba9">
+          <Language>2057</Language>
+          <Caption>Name of Month</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="91f91b6c-c37e-4d8e-8961-7d0b0ca36139">
+          <Language>1025</Language>
+          <Caption>اسم الشهر</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="a4c74e9a-30da-4cd6-a450-2668a5b64058">
+          <Language>1031</Language>
+          <Caption>der Name des Monats</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="04320f03-a662-485d-9927-f618118a2ccf">
+          <Language>1049</Language>
+          <Caption>название месяца</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="f8da08a8-7ed2-43c5-8ea2-837ee49bae65">
+          <Language>3082</Language>
+          <Caption>el nombre del mes</Caption>
+        </Translation>
+      </Translations>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="888f120a-63e3-46c6-894d-ee2e63b7b99e">
+      <ID>Dzien</ID>
+      <Name>Dzien</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="3360679f-b3f2-4312-bfc5-4a843e55c3f6">
+          <DataType>WChar</DataType>
+          <DataSize>2</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="28bb7c55-f443-49d1-94bd-bffcb8e96df4">
+            <TableID>dbo_czas</TableID>
+            <ColumnID>dzien</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <Translations>
+        <Translation dwd:design-time-name="ba0975ec-6962-4d01-a115-8c0e7abb592b">
+          <Language>1045</Language>
+          <Caption>Dzień</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="430f962b-7151-4b08-938c-b790505387a4">
+          <Language>2057</Language>
+          <Caption>Day</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="eb12bdd0-97a8-45db-83ce-1bb4648a30f7">
+          <Language>1025</Language>
+          <Caption>يوم</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="723e1a54-4d1b-4e6c-b0bb-70674ca85285">
+          <Language>1031</Language>
+          <Caption>Tag</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="0efded93-8f77-46f3-ab38-184ec3574ed2">
+          <Language>1049</Language>
+          <Caption>день</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="59ef7a00-9c55-460c-9eb8-00170abfb489">
+          <Language>3082</Language>
+          <Caption>día</Caption>
+        </Translation>
+      </Translations>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="95f2a221-26e2-4a50-b5a2-eaa4752a8e49">
+      <ID>Kwartal</ID>
+      <Name>Kwartal</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="03197b83-0a27-411e-9e2e-b9267e087845">
+          <DataType>WChar</DataType>
+          <DataSize>1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="2cc6244c-99e7-47c5-8482-50617d72c79c">
+            <TableID>dbo_czas</TableID>
+            <ColumnID>kwartal</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <Translations>
+        <Translation dwd:design-time-name="82a668f2-0b3b-4f98-83e8-9e2c4c1c8e5f">
+          <Language>1045</Language>
+          <Caption>Kwartał</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="15741db4-c5e3-4d39-9189-30ce1736f08e">
+          <Language>2057</Language>
+          <Caption>Quarter</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="ccc2af78-6d6a-45ce-9a42-a3f2c371fa7c">
+          <Language>1025</Language>
+          <Caption>ربع</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="b2c8c1ee-7d7b-4db7-bea0-711a9fed33ef">
+          <Language>1031</Language>
+          <Caption>Quartal</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="fdf870b2-d163-4774-b9aa-3734ba2b9982">
+          <Language>1049</Language>
+          <Caption>четверть</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="5f9cebd2-4a4e-451c-9d05-4a62e38c150f">
+          <Language>3082</Language>
+          <Caption>trimestre</Caption>
+        </Translation>
+      </Translations>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="1a1eb43d-17eb-481f-a2de-860b93b9d4a4">
+      <ID>Nazwa Kwartalu</ID>
+      <Name>Nazwa Kwartalu</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="4cfe7bda-f17d-41b3-bf46-bd995987282e">
+          <DataType>WChar</DataType>
+          <DataSize>3</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="515d6bc5-0fe9-4809-91f0-3ab65e896a80">
+            <TableID>dbo_czas</TableID>
+            <ColumnID>nazwa_kwartalu</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <Translations>
+        <Translation dwd:design-time-name="94998345-bcf8-48bb-9c59-0ba9931816cd">
+          <Language>1045</Language>
+          <Caption>Nazwa Kwartału</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="e4cb05c9-cd05-4052-b523-ffe8e2790061">
+          <Language>2057</Language>
+          <Caption>Name of Quarter</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="3729c124-ac13-47cf-8a93-fb562e372a1e">
+          <Language>1025</Language>
+          <Caption>الربع اسم</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="04ebba25-f486-4673-a6cc-416cbdf45aaf">
+          <Language>1031</Language>
+          <Caption>Name Quartal</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="b33ccd2f-6654-4f40-8a74-700e05feee2d">
+          <Language>1049</Language>
+          <Caption>Имя четверть</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="099960aa-7f6e-4f3b-8499-5bcdc0c41b3d">
+          <Language>3082</Language>
+          <Caption>nombre trimestre</Caption>
+        </Translation>
+      </Translations>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="52a93f53-9706-4616-b8d5-382c090cbbc8">
+      <ID>Numer Dnia Tygodnia</ID>
+      <Name>Numer Dnia Tygodnia</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="09bcd48c-f6ac-47b3-9b44-db0c9d234eb1">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3df1b86a-f677-42cb-a96d-088f88d25813">
+            <TableID>dbo_czas</TableID>
+            <ColumnID>numer_dnia_tygodnia</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <Translations>
+        <Translation dwd:design-time-name="2c7c0d4b-cadf-44d6-a22a-276c911e69c6">
+          <Language>1045</Language>
+          <Caption>Numer Dnia Tygodnia</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="bfd6ae23-5e61-493c-a118-3b9382e376bb">
+          <Language>2057</Language>
+          <Caption>Number Weekday</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="02980b35-fd2c-4400-8eb6-254ae1ba31cb">
+          <Language>1025</Language>
+          <Caption>يوم من رقم الأسبوع</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="0bbd3f01-2d3a-4419-8ea0-8336e2b7e17e">
+          <Language>1031</Language>
+          <Caption>Tag der Woche Nummer</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="ba9d2108-5818-4ad0-a772-64eca9666253">
+          <Language>1049</Language>
+          <Caption>День номер недели</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="5d8516b9-7cd3-40cf-981a-b9b866ec7fe7">
+          <Language>3082</Language>
+          <Caption>Día de número de la semana</Caption>
+        </Translation>
+      </Translations>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="476852d7-7569-43e4-9943-ea91075f8e29">
+      <ID>Dzien Tygodnia</ID>
+      <Name>Dzien Tygodnia</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="aba0db87-4645-4687-bf2f-443a93fcd5b4">
+          <DataType>WChar</DataType>
+          <DataSize>12</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="f6730530-6079-4056-8062-c5eb0cc4da65">
+            <TableID>dbo_czas</TableID>
+            <ColumnID>dzien_tygodnia</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <Translations>
+        <Translation dwd:design-time-name="2bbc8f8e-c98c-4c18-ad66-03346b5d6da5">
+          <Language>1045</Language>
+          <Caption>Dzień Tygodnia</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="c21ae71c-79a2-470a-858d-fdace1024419">
+          <Language>2057</Language>
+          <Caption>Weekday</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="f65e5c20-e806-4f2b-b1c7-64b365f9fcc9">
+          <Language>1025</Language>
+          <Caption>يوم من أيام الأسبوع</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="7c68751e-5cad-460b-85f4-29c3627cc809">
+          <Language>1031</Language>
+          <Caption>Wochentag</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="643cb2cc-bb87-48e7-b370-495fbd7efc3e">
+          <Language>1049</Language>
+          <Caption>день недели</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="2e5d7d0f-6b70-4239-abe4-1ba37549caf2">
+          <Language>3082</Language>
+          <Caption>día de la semana</Caption>
+        </Translation>
+      </Translations>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="c4540d02-35c6-41df-8b05-d332b7084685">
+      <ID>Weekend</ID>
+      <Name>Weekend</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="37269746-dc68-4302-bf61-ed5bcb5c9d4d">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="58822f78-e623-4c66-a9a4-424f69ecab9a">
+            <TableID>dbo_czas</TableID>
+            <ColumnID>weekend</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <Translations>
+        <Translation dwd:design-time-name="d78f2228-b8c1-4d8c-89b7-e5fbbc7fe5f4">
+          <Language>1045</Language>
+          <Caption>Weekend</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="9d54a954-3c23-4e41-bd14-ef2bd7c86026">
+          <Language>2057</Language>
+          <Caption>Weekend</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="dd178022-fffe-47b9-a57a-67d6e66ca613">
+          <Language>1025</Language>
+          <Caption>نهاية الأسبوع</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="ca87ae32-0ca5-4260-860e-07e695822b78">
+          <Language>1031</Language>
+          <Caption>Wochenende</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="948ee3cc-1930-4688-ab73-1f62582752cc">
+          <Language>1049</Language>
+          <Caption>уик-энд</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="0ae85133-3fb3-4ee1-842c-3a17da366dee">
+          <Language>3082</Language>
+          <Caption>fin de semana</Caption>
+        </Translation>
+      </Translations>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <Hierarchies>
+    <Hierarchy dwd:design-time-name="69d19830-17b8-420d-8ad1-45cbdf278999">
+      <ID>Hierarchy</ID>
+      <Name>Hierarchy</Name>
+      <Translations>
+        <Translation dwd:design-time-name="16733ef3-7f0d-4f2d-b045-bd01cd885984">
+          <Language>1045</Language>
+          <Caption>Hierarchia</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="f5790b86-d5ff-41e3-aad7-ff63dbb588d5">
+          <Language>1025</Language>
+          <Caption>سلم</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="e0f32b8b-c9ab-4eca-980b-5834d3b54175">
+          <Language>1031</Language>
+          <Caption>Hierarchie</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="b89fbe41-451b-4463-b9c4-1445e9d4ff13">
+          <Language>1049</Language>
+          <Caption>иерархия</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="77fc3012-2adf-4690-b311-fa86ab9889b4">
+          <Language>3082</Language>
+          <Caption>jerarquía</Caption>
+        </Translation>
+      </Translations>
+      <Levels>
+        <Level dwd:design-time-name="5463ed1c-9b04-4270-a5e5-20bfde1a40d8">
+          <ID>Rok</ID>
+          <Name>Rok</Name>
+          <SourceAttributeID>Rok</SourceAttributeID>
+          <Translations>
+            <Translation dwd:design-time-name="644ea9d6-d1c6-44e0-8560-0009e966a0c4">
+              <Language>1045</Language>
+              <Caption>Rok</Caption>
+            </Translation>
+            <Translation dwd:design-time-name="a8fd2844-ad8f-42ae-a7eb-61c2b6a387a7">
+              <Language>2057</Language>
+              <Caption>Year</Caption>
+            </Translation>
+            <Translation dwd:design-time-name="b0356b76-eaf3-4023-ac8b-8c8da252145b">
+              <Language>1025</Language>
+              <Caption>عام</Caption>
+            </Translation>
+            <Translation dwd:design-time-name="cccb46b0-46ad-4c29-ab91-acef1970885d">
+              <Language>1031</Language>
+              <Caption>Jahr</Caption>
+            </Translation>
+            <Translation dwd:design-time-name="9cf933a2-e0d9-4e25-86e4-5de9252351e6">
+              <Language>1049</Language>
+              <Caption>год</Caption>
+            </Translation>
+            <Translation dwd:design-time-name="4ed8cce6-a607-44cb-9613-51ae417fed44">
+              <Language>3082</Language>
+              <Caption>año</Caption>
+            </Translation>
+          </Translations>
+        </Level>
+        <Level dwd:design-time-name="2e87aa83-4e3e-4ca6-b463-fe69fb911913">
+          <ID>Kwartal</ID>
+          <Name>Kwartal</Name>
+          <SourceAttributeID>Kwartal</SourceAttributeID>
+          <Translations>
+            <Translation dwd:design-time-name="d572e807-c479-41bb-b36a-2459fe5fda95">
+              <Language>1045</Language>
+              <Caption>Kwartał</Caption>
+            </Translation>
+            <Translation dwd:design-time-name="cb913574-5bcc-45e5-a413-415ee2169b1c">
+              <Language>2057</Language>
+              <Caption>Quarter</Caption>
+            </Translation>
+            <Translation dwd:design-time-name="bfe50017-062f-470f-a4a2-0ebe96524d43">
+              <Language>1025</Language>
+              <Caption>ربع</Caption>
+            </Translation>
+            <Translation dwd:design-time-name="0dfc60fe-2c01-4d43-8d30-413db3771d04">
+              <Language>1031</Language>
+              <Caption>Quartal</Caption>
+            </Translation>
+            <Translation dwd:design-time-name="01848318-bc89-4ea5-8939-4ba61c23dff2">
+              <Language>1049</Language>
+              <Caption>четверть</Caption>
+            </Translation>
+            <Translation dwd:design-time-name="62999ddd-450d-4253-96d9-55f7bba9718f">
+              <Language>3082</Language>
+              <Caption>trimestre</Caption>
+            </Translation>
+          </Translations>
+        </Level>
+        <Level dwd:design-time-name="4b6e439e-bf59-4c04-8d75-6efaceedb998">
+          <ID>Miesiac</ID>
+          <Name>Miesiac</Name>
+          <SourceAttributeID>Miesiac</SourceAttributeID>
+          <Translations>
+            <Translation dwd:design-time-name="8569eba5-1017-483c-a79d-1d68c09acc5e">
+              <Language>1045</Language>
+              <Caption>Miesiąc</Caption>
+            </Translation>
+            <Translation dwd:design-time-name="c907c121-d506-450a-84b3-d8262631c95a">
+              <Language>2057</Language>
+              <Caption>Month</Caption>
+            </Translation>
+            <Translation dwd:design-time-name="3ca22223-1bc9-4e79-82e1-0b8c44f4020d">
+              <Language>1025</Language>
+              <Caption>شهر</Caption>
+            </Translation>
+            <Translation dwd:design-time-name="ebbdf598-5ebd-4ffb-a9e3-8a98142df022">
+              <Language>1031</Language>
+              <Caption>Monat</Caption>
+            </Translation>
+            <Translation dwd:design-time-name="10a834a0-9c7a-4628-9fc1-70d76207f224">
+              <Language>1049</Language>
+              <Caption>месяц</Caption>
+            </Translation>
+            <Translation dwd:design-time-name="cde55ffc-7feb-499c-b528-ecb3cd853e66">
+              <Language>3082</Language>
+              <Caption>mes</Caption>
+            </Translation>
+          </Translations>
+        </Level>
+        <Level dwd:design-time-name="e0cf63c4-be5d-4acd-8e09-5db4caeede15">
+          <ID>Dzien</ID>
+          <Name>Dzien</Name>
+          <SourceAttributeID>Dzien</SourceAttributeID>
+          <Translations>
+            <Translation dwd:design-time-name="97b027a4-f173-4957-9853-2113de6b712b">
+              <Language>1045</Language>
+              <Caption>Dzień</Caption>
+            </Translation>
+            <Translation dwd:design-time-name="4bf5e710-4699-4734-87c3-61e652090f9a">
+              <Language>2057</Language>
+              <Caption>Day</Caption>
+            </Translation>
+            <Translation dwd:design-time-name="00e33039-ed42-4276-87c2-bb733ed0ec39">
+              <Language>1025</Language>
+              <Caption>يوم</Caption>
+            </Translation>
+            <Translation dwd:design-time-name="a981e7ba-700b-4ff3-9539-b6fa30dcbd2e">
+              <Language>1031</Language>
+              <Caption>Tag</Caption>
+            </Translation>
+            <Translation dwd:design-time-name="05d4c4ba-99c4-42f6-b58e-b66fa0afe500">
+              <Language>1049</Language>
+              <Caption>день</Caption>
+            </Translation>
+            <Translation dwd:design-time-name="bd8480f5-ef42-4ca5-ac29-623df8fb2411">
+              <Language>3082</Language>
+              <Caption>día</Caption>
+            </Translation>
+          </Translations>
+        </Level>
+        <Level dwd:design-time-name="1f66c432-4340-484b-9512-71732b1f7283">
+          <ID>Dzien Tygodnia</ID>
+          <Name>Dzien Tygodnia</Name>
+          <SourceAttributeID>Dzien Tygodnia</SourceAttributeID>
+          <Translations>
+            <Translation dwd:design-time-name="1cf807b2-3b23-4779-8c7e-a79edea71576">
+              <Language>1045</Language>
+              <Caption>Dzień Tygodnia</Caption>
+            </Translation>
+            <Translation dwd:design-time-name="adee720d-33e9-4027-a93e-e7a2f668c8a3">
+              <Language>2057</Language>
+              <Caption>Weekday</Caption>
+            </Translation>
+            <Translation dwd:design-time-name="dcd7e264-142f-4160-a700-5bbbd24a81f3">
+              <Language>1025</Language>
+              <Caption>يوم من أيام الأسبوع</Caption>
+            </Translation>
+            <Translation dwd:design-time-name="34024c70-f911-49a5-bc9a-c1df900b383b">
+              <Language>1031</Language>
+              <Caption>Wochentag</Caption>
+            </Translation>
+            <Translation dwd:design-time-name="20891a9c-3dc3-49b2-b260-3214c9ef1030">
+              <Language>1049</Language>
+              <Caption>день недели</Caption>
+            </Translation>
+            <Translation dwd:design-time-name="74d0eaea-bd69-4f4f-8771-b8766fe0e335">
+              <Language>3082</Language>
+              <Caption>día de la semana</Caption>
+            </Translation>
+          </Translations>
+        </Level>
+      </Levels>
+    </Hierarchy>
+  </Hierarchies>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

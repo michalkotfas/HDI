@@ -1,0 +1,576 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="ced3b0d9-97c2-43fe-b384-b9d29dc440b8" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Kostka HDI</ID>
+  <Name>Kostka HDI</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="20" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="2300" scrolltop="-1246" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="75" x="13838" y="13441" backcolor="16119285" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01ee0000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="dzialanie" left="6467" top="0" logicalid="10" controlid="1" masterid="0" hint1="0" hint2="0" width="3281" height="1879" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000d10c000057070000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_dzialanie" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="czas" left="6164" top="9828" logicalid="11" controlid="2" masterid="0" hint1="0" hint2="0" width="3889" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000310f000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_czas" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="tfakt" left="6309" top="4279" logicalid="12" controlid="3" masterid="0" hint1="0" hint2="0" width="3598" height="3149" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000800000e0e00004d0c0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_tfakt" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="miejsce" left="20" top="4279" logicalid="13" controlid="4" masterid="0" hint1="0" hint2="0" width="3889" height="3149" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000310f00004d0c0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_miejsce" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="jednostka_miary" left="12307" top="4702" logicalid="14" controlid="5" masterid="0" hint1="0" hint2="0" width="3598" height="2302" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000800000e0e0000fe080000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_jednostka_miary" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="7708" top="1380" logicalid="15" controlid="6" masterid="0" hint1="0" hint2="0" width="799" height="3199" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="1973790" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK__tfakt__id_dziala__1ED998B2]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="3" sourceattachpoint="5" destattachpoint="6" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="8107" y="1879" />
+              <point x="8107" y="3079" />
+              <point x="8108" y="3079" />
+              <point x="8108" y="4279" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="7709" top="7128" logicalid="16" controlid="7" masterid="0" hint1="0" hint2="0" width="799" height="3200" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="1973790" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK__tfakt__id_czas__1BFD2C07]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="2" destid="3" sourceattachpoint="6" destattachpoint="7" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="8108" y="9828" />
+              <point x="8108" y="7428" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="9607" top="5454" logicalid="17" controlid="8" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="1973790" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK__tfakt__id_jednos__1DE57479]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="5" destid="3" sourceattachpoint="16" destattachpoint="19" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="12307" y="5853" />
+              <point x="9907" y="5853" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="3609" top="5454" logicalid="18" controlid="9" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="1973790" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK__tfakt__id_miejsc__1CF15040]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="4" destid="3" sourceattachpoint="19" destattachpoint="18" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="3909" y="5853" />
+              <point x="6309" y="5853" />
+            </connector>
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>2300</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-1246</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>75</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Translations>
+    <Translation dwd:design-time-name="c93acb96-b96e-41a1-8059-aa966c60b553">
+      <Language>1045</Language>
+      <Caption>Kostka HDI</Caption>
+    </Translation>
+    <Translation dwd:design-time-name="92c38040-9305-48aa-b546-05671c8c823c">
+      <Language>2057</Language>
+      <Caption>Cube HDI</Caption>
+    </Translation>
+    <Translation dwd:design-time-name="e118d612-20c5-40b9-a3a2-835b8dec0e74">
+      <Language>1049</Language>
+      <Caption>куб HDI</Caption>
+    </Translation>
+    <Translation dwd:design-time-name="61b05861-0b77-40c1-8699-4e490e81125e">
+      <Language>3082</Language>
+      <Caption>cubo HDI</Caption>
+    </Translation>
+    <Translation dwd:design-time-name="8fe360b5-22e8-4933-96e1-d16b20981431">
+      <Language>1025</Language>
+      <Caption>مكعب HDI</Caption>
+    </Translation>
+    <Translation dwd:design-time-name="c22e68bd-acf9-45ba-8be7-570bf78bc2b6">
+      <Language>1031</Language>
+      <Caption>Würfel HDI</Caption>
+    </Translation>
+  </Translations>
+  <Dimensions>
+    <Dimension dwd:design-time-name="0cd6c356-1b71-4c0d-af83-eef7f93f4f7d">
+      <ID>Jednostka Miary</ID>
+      <Name>Jednostka Miary</Name>
+      <Translations>
+        <Translation dwd:design-time-name="48807d40-d77d-41d5-8239-689093db65d8">
+          <Language>1045</Language>
+          <Caption>Jednostka Miary</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="26415a46-9c90-45f2-89c2-756ddea99c8f">
+          <Language>2057</Language>
+          <Caption>Unit of Measure</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="35bbd3ff-2423-4b52-bad2-8c015b79e78d">
+          <Language>1049</Language>
+          <Caption>единица измерения</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="157c1519-bf1b-4e89-8a78-ad9eb186cb1c">
+          <Language>3082</Language>
+          <Caption>unidad de medida</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="ee5463b6-518d-4d0e-aa52-ddfdca2b0ca7">
+          <Language>1025</Language>
+          <Caption>وحدة القياس</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="6c6ccb6a-ab0e-4ded-8015-3dc033f1d5cb">
+          <Language>1031</Language>
+          <Caption>Maßeinheit</Caption>
+        </Translation>
+      </Translations>
+      <DimensionID>Jednostka Miary</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="38f9eca4-75e0-4afa-ac65-d7ad45967efa">
+          <AttributeID>Id Jednostka Miary</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="513e0d31-4eec-464a-aa63-4e3b9643e09d">
+          <AttributeID>Symbol</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="803c50a8-eed6-4c1e-8822-edf2cd9871f4">
+          <AttributeID>Nazwa</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="90c962e2-56b7-4a56-b05d-6ff600ed611a">
+      <ID>Miejsce</ID>
+      <Name>Miejsce</Name>
+      <Translations>
+        <Translation dwd:design-time-name="6d2ea994-da3a-44b1-b736-3cefb70f3714">
+          <Language>1045</Language>
+          <Caption>Miejsce</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="62766dba-edd4-469d-8622-3c23c72e443f">
+          <Language>2057</Language>
+          <Caption>Place</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="36c032db-3aea-402a-856b-427fe4104f48">
+          <Language>1049</Language>
+          <Caption>место</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="55995434-710f-4bca-ab36-78b42c12f592">
+          <Language>3082</Language>
+          <Caption>lugar</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="beb651d5-ed52-4050-9232-21b8c0dbdaf2">
+          <Language>1025</Language>
+          <Caption>مكان</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="908d09e2-1709-44b7-9e24-6f5dc21d60e2">
+          <Language>1031</Language>
+          <Caption>Platz</Caption>
+        </Translation>
+      </Translations>
+      <DimensionID>Miejsce</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="1294cccb-33a6-4f75-9557-98b8cb7bc775">
+          <AttributeID>Id Miejsce</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="578fa7d3-9422-4e73-a1ab-35241de2a755">
+          <AttributeID>Miejscowosc</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="faec07d1-82c4-4bfb-ab09-edd4eaf3b9bd">
+          <AttributeID>Powiat</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="4bec0b74-19ce-46e9-9c41-14e664d6b1a6">
+          <AttributeID>Kod Wojewodztwo</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="82d02591-c3a6-44f2-b5b2-6f83d0e726c9">
+          <AttributeID>Nazwa Wojewodztwa</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="691acee1-2f2b-47ba-bdf6-ac60035bd675">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="5a8ab99c-4e78-4fb8-8667-0ba3021d1fae">
+      <ID>Czas</ID>
+      <Name>Czas</Name>
+      <Translations>
+        <Translation dwd:design-time-name="154ec881-cb22-42a4-bec5-392999a5a48e">
+          <Language>1045</Language>
+          <Caption>Czas</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="29d40ced-b679-4f6a-acb0-7302c6965915">
+          <Language>2057</Language>
+          <Caption>Time</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="9bd74af9-bc62-496b-9b40-b02cd8327686">
+          <Language>1049</Language>
+          <Caption>время</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="74e17e99-498a-4de6-a6d6-9686e29eb61f">
+          <Language>3082</Language>
+          <Caption>tiempo</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="a77d8038-647b-4013-9af9-78edc4e285c8">
+          <Language>1025</Language>
+          <Caption>وقت</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="2c817950-be9c-4ff1-8876-285ee4972af6">
+          <Language>1031</Language>
+          <Caption>Zeit</Caption>
+        </Translation>
+      </Translations>
+      <DimensionID>Czas</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="40a7349e-4532-4a00-a4c6-59fe88be6f74">
+          <AttributeID>Id Czas</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="214adeac-ae05-48ea-b8f8-a175f81d2456">
+          <AttributeID>Rok</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="9fedd0c9-ddf5-40ff-853c-37fe55719929">
+          <AttributeID>Miesiac</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="b7d33131-34ad-4e44-a541-e019ba10a61f">
+          <AttributeID>Nazwa Miesiaca</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="823e92ff-870f-4ebc-83f9-90d1e01fc1d2">
+          <AttributeID>Dzien</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="ba59b5ce-10bd-4cde-9af7-5c58907d9d7d">
+          <AttributeID>Kwartal</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d1c659d7-de60-47bc-9f6f-33d82b3de7e2">
+          <AttributeID>Nazwa Kwartalu</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="c2a78edc-6a6e-4e66-a72f-dfb8974143c4">
+          <AttributeID>Numer Dnia Tygodnia</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="b3dc0582-eb4d-4a19-9dc8-6c97e951f07a">
+          <AttributeID>Dzien Tygodnia</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="8df20494-8667-4828-bd45-22968d88f789">
+          <AttributeID>Weekend</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="8203433a-67aa-47cc-ba13-2dba4bf614af">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="a1610822-d161-4c7f-a204-11a257d7a6ab">
+      <ID>Dzialanie</ID>
+      <Name>Dzialanie</Name>
+      <Translations>
+        <Translation dwd:design-time-name="c510abcb-d1a0-42ff-88f8-e3df54f4a4c9">
+          <Language>1045</Language>
+          <Caption>Działanie</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="e24f7683-6796-469f-8ed1-97310c1d1906">
+          <Language>2057</Language>
+          <Caption>Process</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="f1612059-ee52-4192-b711-c6d224787180">
+          <Language>1049</Language>
+          <Caption>эффект</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="fd7d5e68-8909-4d83-bc85-1acae798895d">
+          <Language>3082</Language>
+          <Caption>acción</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="e61da716-64b7-4ca4-9b0c-708a15200c25">
+          <Language>1025</Language>
+          <Caption>تأثير</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="52180be2-a1eb-440d-870a-c3aac10590be">
+          <Language>1031</Language>
+          <Caption>Wirkung</Caption>
+        </Translation>
+      </Translations>
+      <DimensionID>Dzialanie</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="f63fd01f-4fd4-49c9-9702-6de4edc65483">
+          <AttributeID>Id Dzialania</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d3fd8634-7297-4279-8d9d-fc369c6e8fed">
+          <AttributeID>Nazwa Dzialania</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="0898262f-fc58-4b67-b234-4643845a9ecd">
+      <ID>Tfakt</ID>
+      <Name>Tfakt</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Translations>
+        <Translation dwd:design-time-name="bdd27a53-8c2b-48f9-8167-17c54a0c0871">
+          <Language>1045</Language>
+          <Caption>Tabela Faktów</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="f30eee02-368e-4815-b06a-657d0fda27f2">
+          <Language>2057</Language>
+          <Caption>Fact Table</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="c7a1be74-131f-44bd-b086-362251988dfb">
+          <Language>1049</Language>
+          <Caption>таблица фактов</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="62a09b7b-b91b-44f0-bf04-ab042854b00e">
+          <Language>3082</Language>
+          <Caption>tabla de hechos</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="6f309df2-4a0d-45be-a71a-90849b0dea7d">
+          <Language>1025</Language>
+          <Caption>الجدول حقيقة</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="b1f9d6a9-7cdb-4537-9f7f-28d99a12e166">
+          <Language>1031</Language>
+          <Caption>Faktentabelle</Caption>
+        </Translation>
+      </Translations>
+      <Measures>
+        <Measure dwd:design-time-name="a759a676-0fa0-4d17-a13a-9bbad9214472">
+          <ID>Wartosc</ID>
+          <Name>Wartosc</Name>
+          <Source dwd:design-time-name="38f83ced-9b57-46c5-be5a-0570f72d25e0">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="b4ad484e-2af1-4236-bc6b-6d598159aa15">
+              <TableID>dbo_tfakt</TableID>
+              <ColumnID>wartosc</ColumnID>
+            </Source>
+          </Source>
+          <Translations>
+            <Translation dwd:design-time-name="56a5d6b3-8ff1-4276-bcef-b7755162f748">
+              <Language>1045</Language>
+              <Caption>Wartość</Caption>
+            </Translation>
+            <Translation dwd:design-time-name="cd0f2a42-3442-4889-a33a-d3eefefed6a9">
+              <Language>2057</Language>
+              <Caption>Value</Caption>
+            </Translation>
+            <Translation dwd:design-time-name="92c61ce4-eaa5-4408-a88b-6daf7c3b3fbc">
+              <Language>1049</Language>
+              <Caption>значение</Caption>
+            </Translation>
+            <Translation dwd:design-time-name="21cf005a-8c50-489f-a788-74db6fcb8adb">
+              <Language>3082</Language>
+              <Caption>valor</Caption>
+            </Translation>
+            <Translation dwd:design-time-name="a94fd3f0-94d0-45d4-b991-162a3e73b9ae">
+              <Language>1025</Language>
+              <Caption>قيمة</Caption>
+            </Translation>
+            <Translation dwd:design-time-name="94721906-d213-4fb9-8cc9-fe7589807204">
+              <Language>1031</Language>
+              <Caption>Wert</Caption>
+            </Translation>
+          </Translations>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="5f5fe05b-6e51-4705-b912-9e44ad4fa5a4">
+          <CubeDimensionID>Jednostka Miary</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="6e0a9c6b-dff4-485d-901c-233960e6f40c">
+              <AttributeID>Id Jednostka Miary</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="1d9e08b3-d140-4344-88f4-4f3521c841f3">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="130cb988-0b54-492a-845d-275e0c84c65e">
+                    <TableID>dbo_tfakt</TableID>
+                    <ColumnID>id_jednostka_miary</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="18222f9a-e9ca-48cb-89ff-b540ba1dfb75">
+          <CubeDimensionID>Miejsce</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="9a80cbe0-dd14-454b-b7db-21ef97156369">
+              <AttributeID>Id Miejsce</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="b8bb519e-dde2-4215-a90f-d19e15e75eb4">
+                  <DataType>WChar</DataType>
+                  <DataSize>64</DataSize>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="243ede90-d038-40d7-b57f-18acc1adc886">
+                    <TableID>dbo_tfakt</TableID>
+                    <ColumnID>id_miejsce</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="8428c6d4-c905-426f-989d-b94e0f592b8c">
+          <CubeDimensionID>Czas</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="4cfacd4d-7c00-4bd4-8206-4bf142a9cf27">
+              <AttributeID>Id Czas</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="69c28d47-b275-4bf7-92cc-f324932789b0">
+                  <DataType>WChar</DataType>
+                  <DataSize>10</DataSize>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="8006ef9a-174d-4c72-8b37-fccbfa75f1d4">
+                    <TableID>dbo_tfakt</TableID>
+                    <ColumnID>id_czas</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="6fe9d9b2-1c56-42a6-aa24-367237fd00c5">
+          <CubeDimensionID>Dzialanie</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="5a1cd5b9-7ef2-4669-8167-74496432c496">
+              <AttributeID>Id Dzialania</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="4af50363-a751-426d-87e5-a60ea8e56da2">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="bc36a23d-64b3-4211-b7ae-a7a4cd173098">
+                    <TableID>dbo_tfakt</TableID>
+                    <ColumnID>id_dzialania</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="9db9958c-6b38-4bc9-9520-c33a14aba63e">
+    <DataSourceViewID>HD 400 I</DataSourceViewID>
+  </Source>
+</Cube>

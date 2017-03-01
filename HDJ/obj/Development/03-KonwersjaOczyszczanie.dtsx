@@ -1,0 +1,457 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/6/2017 8:11:19 PM"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="DANIEL-LENOVO"
+  DTS:CreatorName="DANIEL-LENOVO\Max"
+  DTS:DTSID="{CA1DAAE2-D116-47B5-B3E9-831B92ED21A4}"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="13.0.2165.0"
+  DTS:LocaleID="1045"
+  DTS:ObjectName="03-KonwersjaOczyszczanie"
+  DTS:PackageType="5"
+  DTS:VersionBuild="76"
+  DTS:VersionGUID="{B987671D-2FAD-488F-A2DB-5F2A49113AF9}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{F80EF6E3-1F54-456B-87AF-2940CB999F5A}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Max\Desktop\xxx.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.HD_400_I 1]"
+      DTS:CreationName="ADO"
+      DTS:DTSID="{E5AB0169-8F36-498F-A381-CC820C8C0894}"
+      DTS:ObjectName="LocalHost.HD_400_I 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=.;Initial Catalog=HD_400_I;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Dodanie kolumny data i zasilenie tej kolumny"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{4F164509-664E-4284-855D-2440F93D42BB}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Dodanie kolumny data i zasilenie tej kolumny"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D286A97B-5B5B-4EFD-897E-3AA59C23B850}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="ALTER TABLE HD_400_I.dbo.DaneXL ADD data varchar(10)&#xA;GO&#xA;UPDATE HD_400_I.dbo.DaneXL &#xA;SET data=[HD_400_I].[dbo].[DaneXL].[rok]+'-'+[HD_400_I].[dbo].[DaneXL].[miesiac]+'-'+[HD_400_I].[dbo].[DaneXL].[dzien] &#xA;&#xA;DELETE FROM DaneXL WHERE dzien='';" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\laczenie danych z TXT"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{091D2AB6-6C9F-42E6-B057-7B53E139D294}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="laczenie danych z TXT"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D286A97B-5B5B-4EFD-897E-3AA59C23B850}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="INSERT INTO [HD_400_I].[dbo].[DaneXL]&#xA;(    [Rok]&#xA;      ,[miesiac]&#xA;      ,[dzien]&#xA;      ,[zmienna]&#xA;      ,[Wartość]&#xA;      ,[Miasto])&#xA;SELECT     [Rok]&#xA;      ,[miesiac]&#xA;      ,[dzien]&#xA;      ,[zmienna]&#xA;      ,[Wartość]&#xA;      ,[Miasto]&#xA;FROM [HD_400_I].[dbo].[DanePtxt];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Pivot CSV"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{d4ad9d53-2a61-4d6d-806f-c8fdb0fc4248}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Pivot CSV"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D286A97B-5B5B-4EFD-897E-3AA59C23B850}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="IF EXISTS (SELECT 1 FROM information_schema.tables where table_name like 'DanePcsv')&#xA;DROP TABLE DanePcsv&#xA;&#xA;SELECT * INTO DanePcsv&#xA;FROM &#xA;   (SELECT *&#xA;   FROM Danecsv) p&#xA;UNPIVOT&#xA;   (Wartość FOR Miasto IN &#xA;      ([kaliski miasto Kalisz (WP)]&#xA;      ,[kamiennogórski miasto Kamienna Góra (DŚ)]&#xA;      ,[kamieński miasto Kamień Pomorski (ZP)]&#xA;      ,[kartuski miasto Kartuzy (PM)]&#xA;      ,[kazimierski miasto Kazimierza Wielka (ŚK)]&#xA;      ,[kędzierzyńsko-kozielski miasto Kędzierzyn-Koźle (OP)]&#xA;      ,[kępiński miasto Kępno (WP)]&#xA;      ,[kętrzyński miasto Kętrzyn (WM)]&#xA;      ,[kielecki miasto Kielce (ŚK)]&#xA;      ,[kluczborski miasto Kluczbork (OP)]&#xA;      ,[kłobucki miasto Kłobuck (ŚL)]&#xA;      ,[kłodzki miasto Kłodzko (DŚ)]&#xA;      ,[kolbuszowski miasto Kolbuszowa (PK)]&#xA;      ,[kolneński miasto Kolno (PL)]&#xA;      ,[kolski miasto Koło (WP)]&#xA;      ,[kołobrzeski miasto Kołobrzeg (ZP)]&#xA;      ,[konecki miasto Końskie (ŚK)]&#xA;      ,[koniński miasto Konin (WP)]&#xA;      ,[koszaliński miasto Koszalin (ZP)]&#xA;      ,[kościański miasto Kościan (WP)]&#xA;      ,[kościerski miasto Kościerzyna (PM)]&#xA;      ,[kozienicki miasto Kozienice (MZ)]&#xA;      ,[krakowski miasto Kraków (MP)]&#xA;      ,[krapkowicki miasto Krapkowice (OP)]&#xA;      ,[krasnostawski miasto Krasnystaw (LB)]&#xA;      ,[kraśnicki miasto Kraśnik (LB)]&#xA;      ,[krośnieński miasto Krosno (PK)]&#xA;      ,[krośnieński miasto Krosno Odrzańskie (LS)]&#xA;      ,[krotoszyński miasto Krotoszyn (WP)]&#xA;      ,[kutnowski miasto Kutno (ŁD)]&#xA;      ,[kwidzyński miasto Kwidzyn (PM)])&#xA;)AS unpvt;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Pivot TXT"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{8A22AA66-2B89-430C-BBC9-500B1211DF6D}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Pivot TXT"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D286A97B-5B5B-4EFD-897E-3AA59C23B850}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="IF EXISTS (SELECT 1 FROM information_schema.tables where table_name like 'DanePtxt')&#xA;DROP TABLE DanePtxt&#xA;&#xA;SELECT * INTO DanePtxt&#xA;FROM &#xA;   (SELECT *&#xA;   FROM Danetxt) p&#xA;UNPIVOT&#xA;   (Wartość FOR Miasto IN &#xA;      ([Biała Podlaska (LB)]&#xA;      ,[Bialystok1 (PL)]&#xA;      ,[Bielsko-Biała (ŚL)]&#xA;      ,[Bydgoszcz (KP)]&#xA;      ,[Bialystok2 (PL)]&#xA;      ,[Bytom (ŚL)]&#xA;      ,[Chełm (LB)]&#xA;      ,[Chorzów (ŚL)]&#xA;      ,[Częstochowa (ŚL)]&#xA;      ,[Dąbrowa Górnicza (ŚL)]&#xA;      ,[Elbląg (WM)]&#xA;      ,[Gdańsk (PM)]&#xA;      ,[Gdynia (PM)]&#xA;      ,[Gliwice (ŚL)]&#xA;      ,[Gorzów Wielkopolski (LS)]&#xA;      ,[Grudziądz (KP)]&#xA;      ,[Jastrzębie-Zdrój (ŚL)]&#xA;      ,[Jaworzno (ŚL)]&#xA;      ,[Jelenia Góra (DŚ)]&#xA;      ,[Kalisz (WP)]&#xA;      ,[Katowice (ŚL)]&#xA;      ,[Kielce (ŚK)]&#xA;      ,[Konin (WP)]&#xA;      ,[Koszalin (ZP)]&#xA;      ,[Kraków (MP)]&#xA;      ,[Krosno (PK)]&#xA;      ,[Legnica (DŚ)]&#xA;      ,[Leszno (WP)]&#xA;      ,[Lublin (LB)]&#xA;      ,[Łomża (PL)]&#xA;      ,[Łódź (ŁD)]&#xA;      ,[Mysłowice (ŚL)]&#xA;      ,[Nowy Sącz (MP)]&#xA;      ,[Olsztyn (WM)]&#xA;      ,[Opole (OP)]&#xA;      ,[Ostrołęka (MZ)]&#xA;      ,[Piekary Śląskie (ŚL)]&#xA;      ,[Piotrków Trybunalski (ŁD)]&#xA;      ,[Płock (MZ)]&#xA;      ,[Poznań (WP)]&#xA;      ,[Przemyśl (PK)]&#xA;      ,[Radom (MZ)]&#xA;      ,[Ruda Śląska (ŚL)]&#xA;      ,[Rybnik (ŚL)]&#xA;      ,[Rzeszów (PK)]&#xA;      ,[Siedlce (MZ)]&#xA;      ,[Siemianowice Śląskie (ŚL)]&#xA;      ,[Skierniewice (ŁD)]&#xA;      ,[Słupsk (PM)]&#xA;      ,[Sopot (PM)]&#xA;      ,[Sosnowiec (ŚL)]&#xA;      ,[Suwałki (PL)]&#xA;      ,[Szczecin (ZP)]&#xA;      ,[Świętochłowice (ŚL)]&#xA;      ,[Świnoujście (ZP)]&#xA;      ,[Tarnobrzeg (PK)]&#xA;      ,[Tarnów (MP)]&#xA;      ,[Toruń (KP)]&#xA;      ,[Tychy (ŚL)]&#xA;      ,[Wałbrzych (DŚ)]&#xA;      ,[Warszawa (MZ)]&#xA;      ,[Włocławek (KP)]&#xA;      ,[Wrocław (DŚ)]&#xA;      ,[Zabrze (ŚL)]&#xA;      ,[Zamość (LB)]&#xA;      ,[Zielona Góra (LS)]&#xA;      ,[Żory (ŚL)])&#xA;)AS unpvt;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Poprawienie miesiaca CSV"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{8B10B886-FD74-413D-9321-2017DCC073C3}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Poprawienie miesiaca CSV"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D286A97B-5B5B-4EFD-897E-3AA59C23B850}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="UPDATE  DanePcsv&#xA;SET [miesiac]='12'&#xA;WHERE miesiac='11';&#xA;UPDATE  DanePcsv&#xA;SET [miesiac]='11'&#xA;WHERE miesiac='10';&#xA;UPDATE  DanePcsv&#xA;SET [miesiac]='10'&#xA;WHERE miesiac='9';&#xA;UPDATE  DanePcsv&#xA;SET [miesiac]='9'&#xA;WHERE miesiac='8';&#xA;UPDATE  DanePcsv&#xA;SET [miesiac]='8'&#xA;WHERE miesiac='7';&#xA;UPDATE  DanePcsv&#xA;SET [miesiac]='7'&#xA;WHERE miesiac='6';&#xA;UPDATE  DanePcsv&#xA;SET [miesiac]='6'&#xA;WHERE miesiac='5';&#xA;UPDATE  DanePcsv&#xA;SET [miesiac]='5'&#xA;WHERE miesiac='4';&#xA;UPDATE  DanePcsv&#xA;SET [miesiac]='4'&#xA;WHERE miesiac='3';&#xA;UPDATE  DanePcsv&#xA;SET [miesiac]='3'&#xA;WHERE miesiac='2';&#xA;UPDATE  DanePcsv&#xA;SET [miesiac]='2'&#xA;WHERE miesiac='1';&#xA;UPDATE  DanePcsv&#xA;SET [miesiac]='1'&#xA;WHERE miesiac='0';" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Poprawka DanePTxt"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{38D144BC-655F-4BBB-B43F-CB3591C89C53}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Poprawka DanePTxt"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D286A97B-5B5B-4EFD-897E-3AA59C23B850}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="ALTER TABLE DanePtxt&#xA;ADD &#xA;dzien NVARCHAR(11),&#xA;miesiac NVARCHAR(11),&#xA;rok NVARCHAR(11),&#xA;MNazwa NVARCHAR(11);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Rozdzielenie daty TXT"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{7BF42F9E-B374-4A9D-BEF1-20CFC8F4409E}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Rozdzielenie daty TXT"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D286A97B-5B5B-4EFD-897E-3AA59C23B850}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="UPDATE DanePtxt&#xA;SET [Dzien]= SUBSTRING(data, 9, 3);&#xA;UPDATE DanePtxt&#xA;SET [Rok]= RIGHT(data, 4) ;&#xA;UPDATE  DanePtxt&#xA;SET [MNazwa]='Styczeń', [miesiac]=1&#xA;WHERE SUBSTRING(data, 5, 4)='Jan';&#xA;UPDATE  DanePtxt&#xA;SET [MNazwa]='Luty', [miesiac]=2&#xA;WHERE SUBSTRING(data, 5, 4)='Feb';&#xA;UPDATE  DanePtxt&#xA;SET [MNazwa]='Marzec', [miesiac]=3&#xA;WHERE SUBSTRING(data, 5, 4)='Mar';&#xA;UPDATE  DanePtxt&#xA;SET [MNazwa]='Kwiecień', [miesiac]=4&#xA;WHERE SUBSTRING(data, 5, 4)='Apr';&#xA;UPDATE  DanePtxt&#xA;SET [MNazwa]='Maj', [miesiac]=5&#xA;WHERE SUBSTRING(data, 5, 4)='May';&#xA;UPDATE  DanePtxt&#xA;Set [MNazwa]='Czerwiec', [miesiac]=6&#xA;WHERE SUBSTRING(data, 5, 4)='Jun';&#xA;UPDATE  DanePtxt&#xA;Set [MNazwa]='Lipiec', [miesiac]=7&#xA;WHERE SUBSTRING(data, 5, 4)='Jul';&#xA;UPDATE  DanePtxt&#xA;Set [MNazwa]='Sierpień', [miesiac]=8&#xA;WHERE SUBSTRING(data, 5, 4)='Aug';&#xA;UPDATE  DanePtxt&#xA;Set [MNazwa]='Wrzesień', [miesiac]=9&#xA;WHERE SUBSTRING(data, 5, 4)='Sep';&#xA;UPDATE  DanePtxt&#xA;Set [MNazwa]='Październik', [miesiac]=10&#xA;WHERE SUBSTRING(data, 5, 4)='Oct';&#xA;UPDATE  DanePtxt&#xA;Set [MNazwa]='Listopad', [miesiac]=11&#xA;WHERE SUBSTRING(data, 5, 4)='Nov';&#xA;UPDATE  DanePtxt&#xA;Set [MNazwa]='Grudzień', [miesiac]=12&#xA;WHERE SUBSTRING(data, 5, 4)='Dec';" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Tworzenie bazy wspólnej i łączenie danych z CSV"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{2AF82AD6-6EBE-4142-9B5E-EAF7AD0A29E5}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tworzenie bazy wspólnej i łączenie danych z CSV"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D286A97B-5B5B-4EFD-897E-3AA59C23B850}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="IF EXISTS (SELECT 1 FROM information_schema.tables where table_name like 'DaneXL')&#xA;DROP TABLE DaneXL&#xA;&#xA;SELECT * INTO DaneXL FROM DanePcsv;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{27D1378B-463C-4DB1-8BD8-BC29D64C4F81}"
+      DTS:From="Package\Pivot TXT"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Pivot CSV" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{49C5668E-2AA0-4A43-8D15-5F0CE731A580}"
+      DTS:From="Package\Pivot CSV"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Poprawka DanePTxt" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{D4E8CAB1-219D-4C89-A63D-763641E5C2D4}"
+      DTS:From="Package\Poprawka DanePTxt"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Rozdzielenie daty TXT" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{61185750-66B8-450D-A9AA-D3F975C12C8D}"
+      DTS:From="Package\Rozdzielenie daty TXT"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Poprawienie miesiaca CSV" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{D608D9E4-B372-4603-A685-B738DAA370FD}"
+      DTS:From="Package\Poprawienie miesiaca CSV"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Tworzenie bazy wspólnej i łączenie danych z CSV" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{FE9C8F0F-A7F5-467C-8857-B593E8B51887}"
+      DTS:From="Package\Tworzenie bazy wspólnej i łączenie danych z CSV"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\laczenie danych z TXT" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
+      DTS:CreationName=""
+      DTS:DTSID="{7153F719-88BD-4124-806D-9A054668A810}"
+      DTS:From="Package\laczenie danych z TXT"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 7"
+      DTS:To="Package\Dodanie kolumny data i zasilenie tej kolumny" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="292,42.6666666666667"
+          Id="Package\Dodanie kolumny data i zasilenie tej kolumny"
+          TopLeft="209.847225035851,726.06665416042" />
+        <NodeLayout
+          Size="184,42.6666666666667"
+          Id="Package\laczenie danych z TXT"
+          TopLeft="271.041662627831,625.949988807142" />
+        <NodeLayout
+          Size="124,42"
+          Id="Package\Pivot CSV"
+          TopLeft="295.833331607282,189.852377772133" />
+        <NodeLayout
+          Size="124,42"
+          Id="Package\Pivot TXT"
+          TopLeft="301.416662562638,116.166664768258" />
+        <NodeLayout
+          Size="202,42"
+          Id="Package\Poprawienie miesiaca CSV"
+          TopLeft="264.611115378638,446.71110460745" />
+        <NodeLayout
+          Size="174.666666666667,42.6666666666667"
+          Id="Package\Poprawka DanePTxt"
+          TopLeft="282.541667656973,276.683328618307" />
+        <NodeLayout
+          Size="182.666666666667,46"
+          Id="Package\Rozdzielenie daty TXT"
+          TopLeft="279.375004107133,363.916660409669" />
+        <NodeLayout
+          Size="312,42.6666666666667"
+          Id="Package\Tworzenie bazy wspólnej i łączenie danych z CSV"
+          TopLeft="214.069444815939,537.905547456973" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="360.62499708496,158.166664768258">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.6857130038742"
+              Start="0,0"
+              End="0,24.1857130038742">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.1857130038742" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="357.833331607282,231.852377772133">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="12.0416693830241,44.8309508461744"
+              Start="0,0"
+              End="12.0416693830241,37.3309508461744">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.4154754230872" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.4154754230872"
+                    Point2="0,22.4154754230872"
+                    Point3="4,22.4154754230872" />
+                  <mssgle:LineSegment
+                    End="8.0416693830241,22.4154754230872" />
+                  <mssgle:CubicBezierSegment
+                    Point1="8.0416693830241,22.4154754230872"
+                    Point2="12.0416693830241,22.4154754230872"
+                    Point3="12.0416693830241,26.4154754230872" />
+                  <mssgle:LineSegment
+                    End="12.0416693830241,37.3309508461744" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="370.291669215386,319.349995284974">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44.5666651246955"
+              Start="0,0"
+              End="0,37.0666651246955">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.0666651246955" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="368.159726409552,409.916660409669">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.7944441977806"
+              Start="0,0"
+              End="0,29.2944441977806">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.2944441977806" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="367.840280097289,488.71110460745">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49.1944428495232"
+              Start="0,0"
+              End="0,41.6944428495232">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.6944428495232" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="366.555553721885,580.57221412364">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.3777746835024"
+              Start="0,0"
+              End="0,37.8777746835024">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.8777746835024" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="359.444443831841,668.616655473809">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57.4499986866117"
+              Start="0,0"
+              End="0,49.9499986866117">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.9499986866117" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

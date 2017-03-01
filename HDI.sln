@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "SSIS", "HDJ\SSIS.dtproj", "{C1ABFAA6-19BB-4CB4-A48E-1F8766BC7010}"
+EndProject
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "SSAS", "SSAS\SSAS.dwproj", "{6ED8EE96-784E-4748-9AB3-7E9739186122}"
+EndProject
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "SSRS", "SSRS\SSRS.rptproj", "{E8D32BB6-BB1A-476C-A3C1-2B96F734B459}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Development|Default = Development|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C1ABFAA6-19BB-4CB4-A48E-1F8766BC7010}.Debug|Default.ActiveCfg = Development
+		{C1ABFAA6-19BB-4CB4-A48E-1F8766BC7010}.Debug|Default.Build.0 = Development
+		{C1ABFAA6-19BB-4CB4-A48E-1F8766BC7010}.DebugLocal|Default.ActiveCfg = Development
+		{C1ABFAA6-19BB-4CB4-A48E-1F8766BC7010}.DebugLocal|Default.Build.0 = Development
+		{C1ABFAA6-19BB-4CB4-A48E-1F8766BC7010}.Development|Default.ActiveCfg = Development
+		{C1ABFAA6-19BB-4CB4-A48E-1F8766BC7010}.Development|Default.Build.0 = Development
+		{C1ABFAA6-19BB-4CB4-A48E-1F8766BC7010}.Release|Default.ActiveCfg = Development
+		{C1ABFAA6-19BB-4CB4-A48E-1F8766BC7010}.Release|Default.Build.0 = Development
+		{6ED8EE96-784E-4748-9AB3-7E9739186122}.Debug|Default.ActiveCfg = Development
+		{6ED8EE96-784E-4748-9AB3-7E9739186122}.Debug|Default.Build.0 = Development
+		{6ED8EE96-784E-4748-9AB3-7E9739186122}.Debug|Default.Deploy.0 = Development
+		{6ED8EE96-784E-4748-9AB3-7E9739186122}.DebugLocal|Default.ActiveCfg = Development
+		{6ED8EE96-784E-4748-9AB3-7E9739186122}.DebugLocal|Default.Build.0 = Development
+		{6ED8EE96-784E-4748-9AB3-7E9739186122}.DebugLocal|Default.Deploy.0 = Development
+		{6ED8EE96-784E-4748-9AB3-7E9739186122}.Development|Default.ActiveCfg = Development
+		{6ED8EE96-784E-4748-9AB3-7E9739186122}.Development|Default.Build.0 = Development
+		{6ED8EE96-784E-4748-9AB3-7E9739186122}.Development|Default.Deploy.0 = Development
+		{6ED8EE96-784E-4748-9AB3-7E9739186122}.Release|Default.ActiveCfg = Development
+		{6ED8EE96-784E-4748-9AB3-7E9739186122}.Release|Default.Build.0 = Development
+		{6ED8EE96-784E-4748-9AB3-7E9739186122}.Release|Default.Deploy.0 = Development
+		{E8D32BB6-BB1A-476C-A3C1-2B96F734B459}.Debug|Default.ActiveCfg = Debug
+		{E8D32BB6-BB1A-476C-A3C1-2B96F734B459}.Debug|Default.Build.0 = Debug
+		{E8D32BB6-BB1A-476C-A3C1-2B96F734B459}.Debug|Default.Deploy.0 = Debug
+		{E8D32BB6-BB1A-476C-A3C1-2B96F734B459}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{E8D32BB6-BB1A-476C-A3C1-2B96F734B459}.DebugLocal|Default.Build.0 = DebugLocal
+		{E8D32BB6-BB1A-476C-A3C1-2B96F734B459}.Development|Default.ActiveCfg = DebugLocal
+		{E8D32BB6-BB1A-476C-A3C1-2B96F734B459}.Development|Default.Build.0 = DebugLocal
+		{E8D32BB6-BB1A-476C-A3C1-2B96F734B459}.Release|Default.ActiveCfg = Release
+		{E8D32BB6-BB1A-476C-A3C1-2B96F734B459}.Release|Default.Build.0 = Release
+		{E8D32BB6-BB1A-476C-A3C1-2B96F734B459}.Release|Default.Deploy.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

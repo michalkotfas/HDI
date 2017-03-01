@@ -1,0 +1,466 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="21d2937c-39d9-4215-866e-b9171e054e08" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Miejsce</ID>
+  <Name>Miejsce</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-867" scrolltop="-5146" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="4260" y="13441" backcolor="16119285" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01ee0000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="miejsce" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="3889" height="3149" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000310f00004d0c0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_miejsce" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-867</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-5146</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="050133fd-8012-4f22-8dce-77b7913ef2ff">
+    <DataSourceViewID>HD 400 I</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="d55648c7-28a1-42ce-95ef-4de26a68cc06">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Translations>
+    <Translation dwd:design-time-name="65d842af-2860-4d35-ae37-59edf76a43ef">
+      <Language>1045</Language>
+      <Caption>Miejsce</Caption>
+    </Translation>
+    <Translation dwd:design-time-name="c92df9d1-fb58-4421-917b-1eb55bd5995a">
+      <Language>2057</Language>
+      <Caption>Place</Caption>
+    </Translation>
+    <Translation dwd:design-time-name="872af145-05dc-4e55-b679-f6d3b26c615f">
+      <Language>3082</Language>
+      <Caption>lugar</Caption>
+    </Translation>
+    <Translation dwd:design-time-name="32b6726e-46e4-4ef9-9254-d3ea271aa25b">
+      <Language>1025</Language>
+      <Caption>مكان</Caption>
+    </Translation>
+    <Translation dwd:design-time-name="23010a38-38c3-4382-a070-02b389b88a2d">
+      <Language>1049</Language>
+      <Caption>место</Caption>
+    </Translation>
+    <Translation dwd:design-time-name="56304d44-8f5d-4a96-9d63-02cf0b4c5759">
+      <Language>1031</Language>
+      <Caption>Platz</Caption>
+    </Translation>
+  </Translations>
+  <Attributes>
+    <Attribute dwd:design-time-name="2fc72d90-55c0-411b-9d93-740643c0f4d9">
+      <ID>Id Miejsce</ID>
+      <Name>Id Miejsce</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="a47ac2d2-f774-4324-adff-a272eca129f3">
+          <DataType>WChar</DataType>
+          <DataSize>64</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0ebab846-73df-4a28-84c2-111373d62c83">
+            <TableID>dbo_miejsce</TableID>
+            <ColumnID>id_miejsce</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <Translations>
+        <Translation dwd:design-time-name="b7c9ab97-2c01-4bce-a9b9-2896de3e12d5">
+          <Language>1045</Language>
+          <Caption>ID Miejsce</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="0b903c59-f31a-4151-91ce-f108df8b037e">
+          <Language>2057</Language>
+          <Caption>ID Place</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="470876f3-22eb-4a63-99ff-565ae26015b7">
+          <Language>3082</Language>
+          <Caption>ID lugar</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="e3066919-43cc-4b9e-aea7-e1b93a59c4c6">
+          <Language>1025</Language>
+          <Caption>معرف مكان</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="9712ecee-3885-479f-be3c-f01220c887ee">
+          <Language>1049</Language>
+          <Caption>ID место</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="b166d738-e7ae-4e9a-96a5-8e2b6adc802b">
+          <Language>1031</Language>
+          <Caption>ID Platz</Caption>
+        </Translation>
+      </Translations>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="0360e3de-e12f-42e8-832c-9b9247bcf220">
+          <AttributeID>Miejscowosc</AttributeID>
+          <Name>Miejscowosc</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="c1c4f43c-1691-41df-825e-f47d5da19202">
+          <AttributeID>Powiat</AttributeID>
+          <Name>Powiat</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="86e7ddde-07ed-4eb6-be16-2b47ea64c289">
+          <AttributeID>Kod Wojewodztwo</AttributeID>
+          <Name>Kod Wojewodztwo</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="3cd36442-58e9-4a6e-8f0b-d205dbe449f0">
+          <AttributeID>Nazwa Wojewodztwa</AttributeID>
+          <Name>Nazwa Wojewodztwa</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="68a77536-3299-4846-83c4-5a521e89030e">
+      <ID>Miejscowosc</ID>
+      <Name>Miejscowosc</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="7e4959d0-07bd-4927-bd38-5a7607d38924">
+          <DataType>WChar</DataType>
+          <DataSize>24</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e8bd4231-0d10-43c8-9f8c-c40101d21e28">
+            <TableID>dbo_miejsce</TableID>
+            <ColumnID>miejscowosc</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <Translations>
+        <Translation dwd:design-time-name="8b5b3c53-053a-491c-aa80-33bd74681fbd">
+          <Language>1045</Language>
+          <Caption>Miejscowość</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="8e05df20-36dd-4d4e-8048-d1933fff3ef6">
+          <Language>2057</Language>
+          <Caption>City</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="0e38ac8b-73fe-460e-bef7-c91e4beca090">
+          <Language>3082</Language>
+          <Caption>ciudad</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="00e4d088-4f38-4399-b5ed-04eeedada89d">
+          <Language>1025</Language>
+          <Caption>مدينة</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="6a75737a-d473-4aac-beba-0a6e3efcdf93">
+          <Language>1049</Language>
+          <Caption>город</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="a592f029-d8b4-4a53-a699-33ad1877b7a1">
+          <Language>1031</Language>
+          <Caption>Stadt</Caption>
+        </Translation>
+      </Translations>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="92c62f95-a3d8-4425-bca0-e660e6a07d8c">
+      <ID>Powiat</ID>
+      <Name>Powiat</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="82f29603-3330-4cc4-8572-0ce2c0a3ecde">
+          <DataType>WChar</DataType>
+          <DataSize>24</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d19bd7fc-0b8c-4112-bb35-2b26b74518f1">
+            <TableID>dbo_miejsce</TableID>
+            <ColumnID>powiat</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <Translations>
+        <Translation dwd:design-time-name="f3e100a1-d872-4643-808b-c6e85630c0fe">
+          <Language>1045</Language>
+          <Caption>Powiat</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="23864d7a-29c2-4c33-bc31-a4f1b705ca95">
+          <Language>2057</Language>
+          <Caption>Country</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="c55731b2-bdd8-452e-a235-5aa12c62b1ff">
+          <Language>3082</Language>
+          <Caption>condado</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="f861b87c-62ef-41cb-8842-da654a3a103a">
+          <Language>1025</Language>
+          <Caption>مقاطعة</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="39fefa5d-1bac-4baa-96bd-957d9eb51105">
+          <Language>1049</Language>
+          <Caption>графство</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="e15a5ef7-0e9b-486b-bdc9-bc7c10d167fe">
+          <Language>1031</Language>
+          <Caption>county</Caption>
+        </Translation>
+      </Translations>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="e537b666-f204-400a-972b-a48f59402489">
+      <ID>Kod Wojewodztwo</ID>
+      <Name>Kod Wojewodztwo</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="09cdacaf-f2ac-4551-b0a3-0563d5b183c5">
+          <DataType>WChar</DataType>
+          <DataSize>2</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="db5fe0b6-db1e-4767-a78b-f23103a4e1dc">
+            <TableID>dbo_miejsce</TableID>
+            <ColumnID>kod_wojewodztwo</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <Translations>
+        <Translation dwd:design-time-name="6656febb-2635-49b7-8b04-01a0ef0fd597">
+          <Language>1045</Language>
+          <Caption>Kod Województwa</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="fdb083fd-a7f0-4bcd-a91e-52293046120e">
+          <Language>2057</Language>
+          <Caption>Province Code</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="3f776d43-35e0-42bd-8a57-589e295cd5b6">
+          <Language>3082</Language>
+          <Caption>código de la provincia</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="770976ba-5a87-47fa-84b9-a4e3ded5018a">
+          <Language>1025</Language>
+          <Caption>محافظة كود</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="b77d941e-80d6-4755-8df6-9066df3ab4b4">
+          <Language>1049</Language>
+          <Caption>код провинции</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="3f496eb8-935a-47b3-9519-6920e884fbc3">
+          <Language>1031</Language>
+          <Caption>Code Provinz</Caption>
+        </Translation>
+      </Translations>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="12b7243b-a970-4dca-bd0c-402219209b82">
+      <ID>Nazwa Wojewodztwa</ID>
+      <Name>Nazwa Wojewodztwa</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="89435c70-550b-47ca-b2e5-b15ada700950">
+          <DataType>WChar</DataType>
+          <DataSize>19</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="7d502c44-8522-4667-9fe7-a625c0665539">
+            <TableID>dbo_miejsce</TableID>
+            <ColumnID>nazwa_wojewodztwa</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <Translations>
+        <Translation dwd:design-time-name="84b9ac76-4d5c-4390-9755-26d832d70052">
+          <Language>1045</Language>
+          <Caption>Nazwa Województwa</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="2c764a27-8ed2-47a1-8926-cb9b6be82d0d">
+          <Language>2057</Language>
+          <Caption>Name of Province</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="1b5677a9-6669-469a-8550-396132e09edc">
+          <Language>3082</Language>
+          <Caption>provincia</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="892c8a48-c6c7-4ddc-aaeb-b6bb772f7b15">
+          <Language>1025</Language>
+          <Caption>مقاطعة</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="90175394-ccbb-41a2-87b3-e80470043fe2">
+          <Language>1049</Language>
+          <Caption>провинция</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="e8ae8279-9c97-478f-8798-1c14e77365d6">
+          <Language>1031</Language>
+          <Caption>Provinz</Caption>
+        </Translation>
+      </Translations>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <Hierarchies>
+    <Hierarchy dwd:design-time-name="88722415-e9b0-448a-b617-5ddba87296ce">
+      <ID>Hierarchy</ID>
+      <Name>Hierarchy</Name>
+      <Translations>
+        <Translation dwd:design-time-name="0a4c8500-a77e-4724-b1b5-c613c40f8fa8">
+          <Language>1045</Language>
+          <Caption>Hierarchia</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="6559ca34-6070-4cb1-9055-78b5fb1e3c1d">
+          <Language>2057</Language>
+          <Caption>Hierarchy</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="33f6920c-485e-4295-9e7f-910f063b0975">
+          <Language>3082</Language>
+          <Caption>jerarquía</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="1c730692-37c8-4167-8fc1-e760b175b530">
+          <Language>1025</Language>
+          <Caption>سلم</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="b0e8f537-9f90-4554-bb00-ff6a0af5b56c">
+          <Language>1049</Language>
+          <Caption>иерархия</Caption>
+        </Translation>
+        <Translation dwd:design-time-name="71422774-1d4e-4936-a64f-71f0183fb779">
+          <Language>1031</Language>
+          <Caption>Hierarchie</Caption>
+        </Translation>
+      </Translations>
+      <Levels>
+        <Level dwd:design-time-name="617f305c-f7e2-4580-88b1-52bb045f14ca">
+          <ID>Nazwa Wojewodztwa</ID>
+          <Name>Nazwa Wojewodztwa</Name>
+          <SourceAttributeID>Nazwa Wojewodztwa</SourceAttributeID>
+          <Translations>
+            <Translation dwd:design-time-name="0e16b5b7-2855-4308-84e8-fb77d4dbdc78">
+              <Language>1045</Language>
+              <Caption>Nazwa Województwa</Caption>
+            </Translation>
+            <Translation dwd:design-time-name="5e3e5b36-d9d8-4730-a750-fddd5e23139d">
+              <Language>2057</Language>
+              <Caption>Name of Province</Caption>
+            </Translation>
+            <Translation dwd:design-time-name="288413c6-f96a-40d8-8a30-a9d1d3c93b73">
+              <Language>3082</Language>
+              <Caption>provincia</Caption>
+            </Translation>
+            <Translation dwd:design-time-name="3ddd643f-99b9-47d0-b030-97a619a8b175">
+              <Language>1025</Language>
+              <Caption>مقاطعة</Caption>
+            </Translation>
+            <Translation dwd:design-time-name="b4b1c18b-d64f-4c34-8095-0ecad1936f78">
+              <Language>1049</Language>
+              <Caption>провинция</Caption>
+            </Translation>
+            <Translation dwd:design-time-name="fc47d796-ea30-447a-85f3-25425952093c">
+              <Language>1031</Language>
+              <Caption>Provinz</Caption>
+            </Translation>
+          </Translations>
+        </Level>
+        <Level dwd:design-time-name="84c4af03-31ab-4a42-ae34-b030b2444bdf">
+          <ID>Powiat</ID>
+          <Name>Powiat</Name>
+          <SourceAttributeID>Powiat</SourceAttributeID>
+          <Translations>
+            <Translation dwd:design-time-name="b33f7b2a-fc26-4590-825b-303253263a88">
+              <Language>1045</Language>
+              <Caption>Powiat</Caption>
+            </Translation>
+            <Translation dwd:design-time-name="6f970ed3-5d20-4f84-bcb7-be48823a077a">
+              <Language>2057</Language>
+              <Caption>Country</Caption>
+            </Translation>
+            <Translation dwd:design-time-name="e4ad7914-ea28-4ded-99e8-b4d93f25eb90">
+              <Language>3082</Language>
+              <Caption>condado</Caption>
+            </Translation>
+            <Translation dwd:design-time-name="cdc59a2c-b724-4e35-9c57-29a2a65396a7">
+              <Language>1025</Language>
+              <Caption>مقاطعة</Caption>
+            </Translation>
+            <Translation dwd:design-time-name="cb088581-d057-42ae-a872-7ae9a9b95b18">
+              <Language>1049</Language>
+              <Caption>графство</Caption>
+            </Translation>
+            <Translation dwd:design-time-name="e25ac4fd-d356-4b5d-9897-89fa4baa7068">
+              <Language>1031</Language>
+              <Caption>county</Caption>
+            </Translation>
+          </Translations>
+        </Level>
+        <Level dwd:design-time-name="e04bb014-8ee7-44d5-8e82-d3fe981f63e4">
+          <ID>Miejscowosc</ID>
+          <Name>Miejscowosc</Name>
+          <SourceAttributeID>Miejscowosc</SourceAttributeID>
+          <Translations>
+            <Translation dwd:design-time-name="8c170290-b255-43df-a759-28693123614f">
+              <Language>1045</Language>
+              <Caption>Miejscowość</Caption>
+            </Translation>
+            <Translation dwd:design-time-name="46935e85-65e0-4280-ba7b-cb3f5bf17021">
+              <Language>2057</Language>
+              <Caption>City</Caption>
+            </Translation>
+            <Translation dwd:design-time-name="2e671580-7af3-4413-8680-08d47dba0dd9">
+              <Language>3082</Language>
+              <Caption>ciudad</Caption>
+            </Translation>
+            <Translation dwd:design-time-name="e80ccd92-0c73-4651-a0b0-f9e0c607ee20">
+              <Language>1025</Language>
+              <Caption>مدينة</Caption>
+            </Translation>
+            <Translation dwd:design-time-name="90246ba4-889a-476a-9152-548296acfba8">
+              <Language>1049</Language>
+              <Caption>город</Caption>
+            </Translation>
+            <Translation dwd:design-time-name="88d24feb-5d4f-4d41-9a39-e0218255e192">
+              <Language>1031</Language>
+              <Caption>Stadt</Caption>
+            </Translation>
+          </Translations>
+        </Level>
+      </Levels>
+    </Hierarchy>
+  </Hierarchies>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>
